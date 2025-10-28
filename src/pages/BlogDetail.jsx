@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "../context/LanguageContext.jsx";
 import vastuShantiImg from "../assets/Blog/navagrahapooja.webp";
 import marriageMuhuratImg from "../assets/Blog/rakshabandhan.webp";
-import kaalSarpDoshImg from "../assets/Poojas/kalsarpdosh.webp";
+import kaalSarpDoshImg from "../assets/poojas/kalsarpdosh.webp";
 
 const BlogDetail = () => {
   const { id } = useParams();

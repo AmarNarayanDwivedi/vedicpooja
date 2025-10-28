@@ -8,7 +8,7 @@ import shaniSaturnImg from "./assets/Blog/shanidosharemedies.webp";
 import rahuImg from "./assets/Blog/rahu-keturemedies.webp";
 import ketuImg from "./assets/Blog/rahu-keturemedies.webp";
 import mangalDoshImg from "./assets/Blog/mangaldosha.webp";
-import kaalSarpImg from "./assets/Poojas/kalsarpdosh.webp";
+import kaalSarpImg from "./assets/poojas/kalsarpdosh.webp";
 import pitraDoshImg from "./assets/Blog/amavasyaremedies.webp";
 import shaniDoshImg from "./assets/Blog/shanidosharemedies.webp";
 import chandraDoshImg from "./assets/Blog/purnimavrat.webp";
