@@ -4,14 +4,14 @@ import { useTranslation } from "../context/LanguageContext.jsx";
 import PoojaCard from "../components/PoojaCard";
 import { poojaServicesData } from "../data/poojaServices.js";
 import weddingBanner from "../assets/Banner/weedingherosection.webp";
-import ritualsBanner from "../assets/Banner/RitualsBannerHeroSection.webp";
-import astrologyBanner from "../assets/Banner/AstrologyHeroSection.webp";
-import matchmakingBanner from "../assets/Banner/SpirituallyGuidedIndianMatchmaking.webp";
-import vedicPoojaIcon from "../assets/HeroPage/Vedic Pooja Services.webp";
-import astrologyIcon from "../assets/HeroPage/Astrology Consultations.webp";
-import onlinePoojaIcon from "../assets/HeroPage/Online  E-Pooja.webp";
-import vastuShantiImg from "../assets/Blog/NavagrahaPooja.webp";
-import marriageMuhuratImg from "../assets/Blog/RakshaBandhan.webp";
+import ritualsBanner from "../assets/Banner/ritualsbannerherosection.webp";
+import astrologyBanner from "../assets/Banner/astrologyherosection.webp";
+import matchmakingBanner from "../assets/Banner/spirituallyguidedindianmatchmaking.webp";
+import vedicPoojaIcon from "../assets/HeroPage/vedic pooja services.webp";
+import astrologyIcon from "../assets/HeroPage/astrology consultations.webp";
+import onlinePoojaIcon from "../assets/HeroPage/online  e-pooja.webp";
+import vastuShantiImg from "../assets/Blog/navagrahapooja.webp";
+import marriageMuhuratImg from "../assets/Blog/rakshabandhan.webp";
 import kaalSarpDoshImg from "../assets/poojas/kalsarpdosh.webp";
 
 // Helper Icons

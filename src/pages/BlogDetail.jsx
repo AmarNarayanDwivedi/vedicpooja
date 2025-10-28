@@ -1,10 +1,10 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useTranslation } from '../context/LanguageContext.jsx';
-import vastuShantiImg from '../assets/Blog/NavagrahaPooja.webp';
-import marriageMuhuratImg from '../assets/Blog/RakshaBandhan.webp';
-import kaalSarpDoshImg from '../assets/Poojas/KalSarpDosh.webp';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useTranslation } from "../context/LanguageContext.jsx";
+import vastuShantiImg from "../assets/Blog/navagrahapooja.webp";
+import marriageMuhuratImg from "../assets/Blog/rakshabandhan.webp";
+import kaalSarpDoshImg from "../assets/Poojas/kalsarpdosh.webp";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -14,7 +14,8 @@ const BlogDetail = () => {
     1: {
       id: 1,
       title: "Why Vastu Shanti is Important Before Moving In",
-      description: "Learn about the significance of Vastu Shanti puja for a harmonious and prosperous life in your new home.",
+      description:
+        "Learn about the significance of Vastu Shanti puja for a harmonious and prosperous life in your new home.",
       image: vastuShantiImg,
       content: `Vastu Shanti Pooja is a sacred ritual performed to purify and energize a new home or office space according to Vedic architectural principles. This ancient practice helps remove negative energies and invites positive vibrations into your living space.
 
@@ -38,12 +39,13 @@ The pooja involves specific mantras, offerings, and rituals that align your spac
 The ritual typically includes Ganesh Puja, Navagraha Shanti, and specific Vastu mantras that align your space with the five elements of nature. Our experienced pandits ensure that every aspect of the pooja is performed according to traditional Vedic principles.`,
       author: "Pandit Aditya Narayan",
       date: "December 15, 2024",
-      readTime: "5 min read"
+      readTime: "5 min read",
     },
     2: {
       id: 2,
       title: "5 Auspicious Muhurats for Marriage in 2025",
-      description: "Discover the most auspicious dates and times for tying the knot in the upcoming year.",
+      description:
+        "Discover the most auspicious dates and times for tying the knot in the upcoming year.",
       image: marriageMuhuratImg,
       content: `Marriage is one of the most important milestones in life, and choosing the right muhurat (auspicious time) can significantly impact the couple's future happiness and prosperity.
 
@@ -79,12 +81,13 @@ In 2025, several planetary alignments create favorable conditions for weddings. 
 These dates are calculated based on the couple's birth charts and current planetary positions to ensure maximum compatibility and harmony.`,
       author: "Pandit Aditya Narayan",
       date: "December 10, 2024",
-      readTime: "7 min read"
+      readTime: "7 min read",
     },
     3: {
       id: 3,
       title: "What is Kaal Sarp Dosh and How to Remove It?",
-      description: "An in-depth guide to understanding and mitigating the effects of Kaal Sarp Dosh in your horoscope.",
+      description:
+        "An in-depth guide to understanding and mitigating the effects of Kaal Sarp Dosh in your horoscope.",
       image: kaalSarpDoshImg,
       content: `Kaal Sarp Dosh is a significant astrological condition that occurs when all planets in a birth chart are positioned between Rahu and Ketu. This dosh can create various life challenges including career obstacles, health issues, and relationship problems.
 
@@ -131,8 +134,8 @@ The intensity of the dosh depends on which house it affects and the specific pla
 Regular meditation and charity work can also help mitigate the negative effects of this dosh.`,
       author: "Pandit Aditya Narayan",
       date: "December 5, 2024",
-      readTime: "8 min read"
-    }
+      readTime: "8 min read",
+    },
   };
 
   const post = blogPosts[id];
@@ -141,8 +144,12 @@ Regular meditation and charity work can also help mitigate the negative effects 
     return (
       <div className="min-h-screen bg-[#FFF7E6] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#800000] mb-4">Blog Post Not Found</h1>
-          <Link to="/" className="text-[#E67E22] hover:underline">← Back to Home</Link>
+          <h1 className="text-4xl font-bold text-[#800000] mb-4">
+            Blog Post Not Found
+          </h1>
+          <Link to="/" className="text-[#E67E22] hover:underline">
+            ← Back to Home
+          </Link>
         </div>
       </div>
     );
@@ -158,53 +165,82 @@ Regular meditation and charity work can also help mitigate the negative effects 
           className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
         >
           <div className="overflow-hidden h-64 md:h-80">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
           </div>
-          
+
           <div className="p-8 md:p-12">
             <div className="flex items-center justify-between mb-6">
               <span className="text-sm text-gray-500">{post.date}</span>
-              <span className="text-sm text-[#E67E22] font-semibold">{post.readTime}</span>
+              <span className="text-sm text-[#E67E22] font-semibold">
+                {post.readTime}
+              </span>
             </div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold text-[#800000] mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+
+            <h1
+              className="text-3xl md:text-4xl font-bold text-[#800000] mb-4"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
               {post.title}
             </h1>
-            
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">{post.description}</p>
-            
+
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              {post.description}
+            </p>
+
             <div className="flex items-center mb-8 pb-6 border-b border-gray-200">
               <div className="w-12 h-12 bg-[#E67E22] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                {post.author.split(' ').map(n => n[0]).join('')}
+                {post.author
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
               </div>
               <div>
                 <p className="font-semibold text-[#800000]">{post.author}</p>
-                <p className="text-sm text-gray-500">Vedic Astrologer & Priest</p>
+                <p className="text-sm text-gray-500">
+                  Vedic Astrologer & Priest
+                </p>
               </div>
             </div>
-            
+
             <div className="prose prose-lg max-w-none">
-              {post.content.split('\n\n').map((paragraph, index) => {
-                if (paragraph.startsWith('## ')) {
+              {post.content.split("\n\n").map((paragraph, index) => {
+                if (paragraph.startsWith("## ")) {
                   return (
-                    <h2 key={index} className="text-2xl font-bold text-[#800000] mt-8 mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                      {paragraph.replace('## ', '')}
+                    <h2
+                      key={index}
+                      className="text-2xl font-bold text-[#800000] mt-8 mb-4"
+                      style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    >
+                      {paragraph.replace("## ", "")}
                     </h2>
                   );
                 }
-                if (paragraph.startsWith('### ')) {
+                if (paragraph.startsWith("### ")) {
                   return (
-                    <h3 key={index} className="text-xl font-semibold text-[#800000] mt-6 mb-3">
-                      {paragraph.replace('### ', '')}
+                    <h3
+                      key={index}
+                      className="text-xl font-semibold text-[#800000] mt-6 mb-3"
+                    >
+                      {paragraph.replace("### ", "")}
                     </h3>
                   );
                 }
-                if (paragraph.startsWith('- **')) {
+                if (paragraph.startsWith("- **")) {
                   return (
-                    <ul key={index} className="list-disc list-inside space-y-2 mb-6">
-                      {paragraph.split('\n').map((item, i) => (
+                    <ul
+                      key={index}
+                      className="list-disc list-inside space-y-2 mb-6"
+                    >
+                      {paragraph.split("\n").map((item, i) => (
                         <li key={i} className="text-gray-700 leading-relaxed">
-                          {item.replace('- **', '').replace('**:', ':').replace('**', '')}
+                          {item
+                            .replace("- **", "")
+                            .replace("**:", ":")
+                            .replace("**", "")}
                         </li>
                       ))}
                     </ul>
@@ -217,17 +253,17 @@ Regular meditation and charity work can also help mitigate the negative effects 
                 );
               })}
             </div>
-            
+
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="flex-1 bg-[#E67E22] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#c66919] transition-colors duration-300 text-center shadow-lg hover:shadow-xl"
                 >
                   Book Consultation
                 </Link>
-                <Link 
-                  to="/#blog" 
+                <Link
+                  to="/#blog"
                   className="flex-1 bg-gray-100 text-[#800000] font-bold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors duration-300 text-center border border-gray-300"
                 >
                   ← Back to Blog
