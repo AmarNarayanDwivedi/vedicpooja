@@ -1,33 +1,33 @@
 // Comprehensive Pooja Services Data
 
 // Import all pooja images
-import grihaPraveshImg from "@/assets/poojas/GrihaPraveshPooja.webp";
-import navagrahaShantiImg from "@/assets/poojas/Navagraha-Shanti.webp";
-import mahamrityunjayaJaapImg from "@/assets/poojas/Mahamrityunjaya-Jaap.webp";
-import lakshmiPujaImg from "@/assets/poojas/Lakshmi-Puja.webp";
-import mundanSanskarImg from "@/assets/poojas/Mundan-Sanskar.webp";
-import satyanarayanPujaImg from "@/assets/poojas/Satyanarayan-Puja.webp";
-import shubhVivahImg from "@/assets/poojas/Shubh-Vivah.webp";
-import naamkaranSanskarImg from "@/assets/poojas/NaamKaran.webp";
-import kaalSarpDoshImg from "@/assets/poojas/KalSarpDosh.webp";
-import ganeshPujaImg from "@/assets/poojas/GaneshPuja.webp";
-import durgaSaptashatiPathImg from "@/assets/poojas/DurgaSaptashatiPath.webp";
-import bhoomiPujanImg from "@/assets/poojas/BhoomiPujan.webp";
-import rudrabhishekImg from "@/assets/poojas/Rudrabhishek.webp";
-import baglamukhiPujaImg from "@/assets/poojas/BaglamukhiPuja.webp";
-import officeOpeningPujaImg from "@/assets/poojas/OfficeOpeningPuja(VastuPuja).webp";
-import birthdayPujaImg from "@/assets/poojas/BirthdayPuja(JanmadinPuja).webp";
-import sunderkandPathImg from "@/assets/poojas/Sunderkand-Path.webp";
-import vastuDoshNivaranImg from "@/assets/poojas/Vastu-Dosh-Nivaran.webp";
-import engagementPujaImg from "@/assets/poojas/Engagement-Puja-(Sagai).webp";
-import chandiPathImg from "@/assets/poojas/ChandiPath.webp";
-import akhandRamayanPathImg from "@/assets/poojas/Akhand-Ramayan-Path.webp";
-import grahShantiPujaImg from "@/assets/poojas/Grah-Shanti-Puja.webp";
-import mangalDoshPujaImg from "@/assets/poojas/MangalDoshPuja(ManglikDosh).webp";
-import gandMoolShantiPujaImg from "@/assets/poojas/GandMoolShantiPuja.webp";
-import nakshatraShantiPujaImg from "@/assets/poojas/NakshatraShantiPuja.webp";
-import rudraYagnaImg from "@/assets/poojas/RudraYagna.webp";
-import mahaLakshmiPujaImg from "@/assets/poojas/MahaLakshmiPuja.webp";
+import grihaPraveshImg from "@/assets/poojas/grihapraveshpooja.webp";
+import navagrahaShantiImg from "@/assets/poojas/navagraha-shanti.webp";
+import mahamrityunjayaJaapImg from "@/assets/poojas/mahamrityunjaya-jaap.webp";
+import lakshmiPujaImg from "@/assets/poojas/lakshmi-puja.webp";
+import mundanSanskarImg from "@/assets/poojas/mundan-sanskar.webp";
+import satyanarayanPujaImg from "@/assets/poojas/satyanarayan-puja.webp";
+import shubhVivahImg from "@/assets/poojas/shubh-vivah.webp";
+import naamkaranSanskarImg from "@/assets/poojas/naamkaran.webp";
+import kaalSarpDoshImg from "@/assets/poojas/kalsarpdosh.webp";
+import ganeshPujaImg from "@/assets/poojas/ganeshpuja.webp";
+import durgaSaptashatiPathImg from "@/assets/poojas/durgasaptashatipath.webp";
+import bhoomiPujanImg from "@/assets/poojas/bhoomipujan.webp";
+import rudrabhishekImg from "@/assets/poojas/rudrabhishek.webp";
+import baglamukhiPujaImg from "@/assets/poojas/baglamukhipuja.webp";
+import officeOpeningPujaImg from "@/assets/poojas/officeopeningpuja(vastupuja).webp";
+import birthdayPujaImg from "@/assets/poojas/birthdaypuja(janmadinpuja).webp";
+import sunderkandPathImg from "@/assets/poojas/sunderkand-path.webp";
+import vastuDoshNivaranImg from "@/assets/poojas/vastu-dosh-nivaran.webp";
+import engagementPujaImg from "@/assets/poojas/engagement-puja-(sagai).webp";
+import chandiPathImg from "@/assets/poojas/chandipath.webp";
+import akhandRamayanPathImg from "@/assets/poojas/akhand-ramayan-path.webp";
+import grahShantiPujaImg from "@/assets/poojas/grah-shanti-puja.webp";
+import mangalDoshPujaImg from "@/assets/poojas/mangaldoshpuja(manglikdosh).webp";
+import gandMoolShantiPujaImg from "@/assets/poojas/gandmoolshantipuja.webp";
+import nakshatraShantiPujaImg from "@/assets/poojas/nakshatrashantipuja.webp";
+import rudraYagnaImg from "@/assets/poojas/rudrayagna.webp";
+import mahaLakshmiPujaImg from "@/assets/poojas/mahalakshmipuja.webp";
 
 export const poojaServicesData = [
   {
