@@ -50,6 +50,14 @@ const HeroSection = ({ onBookPoojaClick }) => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
         />
+        <img
+          src={slides[currentSlide].image}
+          alt="Vedic pooja services and astrology consultations in Pune"
+          fetchpriority="high"
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover opacity-0"
+          aria-hidden="true"
+        />
       </AnimatePresence>
       <div className="absolute inset-0 bg-black/60"></div>
 

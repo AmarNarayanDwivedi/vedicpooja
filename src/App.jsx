@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import { LanguageProvider } from "./context/LanguageContext.jsx";
 import Header from "./components/header.jsx";
 import Footer from "./components/footer.jsx";
 import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
+import { Analytics } from "@vercel/analytics/react";
 
-// Pages
-import Home from "./pages/home.jsx";
-import AboutPage from "./AppAboutpage.jsx";
-import AstrologyPage from "./appAstrologyPage.jsx";
-import PoojaServicesPage from "./Apppoojaservice.jsx";
-import OpenPoojaServicePage from "./AppOpenPoojaServicePage.jsx";
-import BlogPage from "./Appblog.jsx";
-import BlogDetail from "./pages/BlogDetail.jsx";
+// Lazy load pages for code splitting
+const Home = lazy(() => import("./pages/home.jsx"));
+const AboutPage = lazy(() => import("./AppAboutpage.jsx"));
+const AstrologyPage = lazy(() => import("./appAstrologyPage.jsx"));
+const PoojaServicesPage = lazy(() => import("./Apppoojaservice.jsx"));
+const OpenPoojaServicePage = lazy(() =>
+  import("./AppOpenPoojaServicePage.jsx")
+);
+const BlogPage = lazy(() => import("./Appblog.jsx"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail.jsx"));
 
 export default function App() {
   const ScrollToHash = () => {
@@ -105,18 +108,27 @@ export default function App() {
         }}
       >
         <BrowserRouter>
+          <Analytics />
           <ScrollToHash />
           <Header />
           <main className="pt-20">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/astrology" element={<AstrologyPage />} />
-              <Route path="/pooja/*" element={<PoojaServicesPage />} />
-              <Route path="/pooja/open" element={<OpenPoojaServicePage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/blog/:id" element={<BlogDetail />} />
-            </Routes>
+            <Suspense
+              fallback={
+                <div className="min-h-screen flex items-center justify-center">
+                  <div className="text-xl">Loading...</div>
+                </div>
+              }
+            >
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/astrology" element={<AstrologyPage />} />
+                <Route path="/pooja/*" element={<PoojaServicesPage />} />
+                <Route path="/pooja/open" element={<OpenPoojaServicePage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:id" element={<BlogDetail />} />
+              </Routes>
+            </Suspense>
           </main>
           <FloatingWhatsApp phoneNumber="8668552465" label="Book Now" />
           <InstagramPopup />

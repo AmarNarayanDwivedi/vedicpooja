@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Star, ChevronDown, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "@/context/LanguageContext.jsx";
+import SEOMetadata from "@/components/SEOMetadata.jsx";
 
 // --- Helper Functions & Data ---
 
@@ -558,6 +559,62 @@ export default function AstrologyPageView() {
 
   return (
     <div className="min-h-screen">
+      <SEOMetadata
+        title="Astrology Services in Pune | Astrology Consultation Online India | Vedic Astrology"
+        description="Expert astrology services in Pune and online across India. Get personalized astrology consultations, Kundali matching, Vastu consultation, and gemstone recommendations from experienced Vedic astrologers."
+        keywords="astrology in Pune, astrology consultation online India, vedic astrology Pune, kundali matching Pune, vastu consultation Pune, gemstone recommendation astrology"
+        canonical="https://www.vedic-pooja.com/astrology"
+        ogImage="https://www.vedic-pooja.com/assets/astrology-hero.jpg"
+      />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Astrology Services in Pune",
+          description:
+            "Professional astrology consultations, Kundali matching, Vastu consultation, and gemstone recommendations in Pune and online across India",
+          provider: {
+            "@type": "Organization",
+            name: "Vedic Pooja",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Pune",
+              addressRegion: "Maharashtra",
+              addressCountry: "IN",
+            },
+          },
+          serviceType: "Astrology Consultation",
+          areaServed: [
+            {
+              "@type": "Place",
+              name: "Pune",
+            },
+            {
+              "@type": "Place",
+              name: "India",
+            },
+          ],
+          offers: [
+            {
+              "@type": "Offer",
+              name: "Kundali Matching",
+              description: "Detailed compatibility analysis for marriage",
+            },
+            {
+              "@type": "Offer",
+              name: "Vastu Consultation",
+              description:
+                "Harmonize your home or office with Vedic principles",
+            },
+            {
+              "@type": "Offer",
+              name: "Gemstone Recommendation",
+              description:
+                "Personalized gemstone suggestions based on birth chart",
+            },
+          ],
+        })}
+      </script>
       <main className="container mx-auto px-6 py-12">
         <AstrologyPage language={lang} handleBooking={handleBooking} />
       </main>
