@@ -19,6 +19,16 @@ import vedicPoojaServicesImg from "./assets/HeroPage/vedic pooja services.webp";
 import astrologyConsultationsImg from "./assets/HeroPage/astrology consultations.webp";
 import onlineEPoojaImg from "./assets/HeroPage/online  e-pooja.webp";
 
+// Import pooja glimpses
+import poojaPerforming2 from "./assets/HeroPage/pooja_glimpshiss/pooja-performing-2.webp";
+import poojaPerforming from "./assets/HeroPage/pooja_glimpshiss/pooja-performing.webp";
+import poojaSetup from "./assets/HeroPage/pooja_glimpshiss/pooja-setup.webp";
+import shadi from "./assets/HeroPage/pooja_glimpshiss/shadi.webp";
+import poojaSetupVideo from "./assets/HeroPage/pooja_glimpshiss/video/Pooja_Setup_Video_Creation.webm";
+import poojaVideoComplete from "./assets/HeroPage/pooja_glimpshiss/video/Pooja_Video_Generation_Complete.webm";
+import poojaVideoWebsite from "./assets/HeroPage/pooja_glimpshiss/video/Pooja_Video_Generation_For_Website.webm";
+import vid2025 from "./assets/HeroPage/pooja_glimpshiss/video/VID_20250722_063314_767.webm";
+
 // --- Multi-language Support (i18n simulation) ---
 const translations = {
   en: {
@@ -608,7 +618,7 @@ const HeroSection = ({ onBookPoojaClick }) => {
             {t.bookPoojaNow}
           </button>
           <button
-            onClick={onBookPoojaClick}
+            onClick={() => navigate("/astrology")}
             className="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg shadow-xl hover:bg-white hover:text-[#E67E22] transition-colors duration-300 ease-in-out"
           >
             {t.bookAstrology}
@@ -645,12 +655,12 @@ const ServicesOverview = () => {
           >
             {t.servicesTitle}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.a
                 href={service.link}
                 key={index}
-                className="block p-8 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-300 ease-in-out"
+                className="block p-6 sm:p-8 bg-white/70 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-300 ease-in-out"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -664,15 +674,15 @@ const ServicesOverview = () => {
                   <img
                     src={service.imageSrc}
                     alt={service.title}
-                    className="h-24 w-24 mb-4 object-contain"
+                    className="h-20 sm:h-24 w-20 sm:w-24 mb-4 object-contain"
                   />
                   <h3
-                    className="text-xl font-semibold text-[#800000] mb-2"
+                    className="text-lg sm:text-xl font-semibold text-[#800000] mb-2"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
                     {service.title}
                   </h3>
-                  <span className="text-[#E67E22] font-medium mt-4 group-hover:underline">
+                  <span className="text-[#E67E22] font-medium mt-4 group-hover:underline text-sm sm:text-base">
                     {t.learnMore}
                   </span>
                 </div>
@@ -702,7 +712,7 @@ const WhyChooseUsSection = () => {
     },
     {
       icon: <PoojaPerformedIcon />,
-      number: 1000000,
+      number: 10000,
       title: t.poojasPerformed,
       description: t.performedDesc,
     },
@@ -806,11 +816,14 @@ const AboutPreview = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <img
-              src="https://placehold.co/400x400/FFF7E6/800000?text=Pandit+Ji"
-              alt="About Pandit Ji"
-              className="rounded-xl shadow-lg w-full"
-            />
+            <div className="relative w-full h-96 flex items-center justify-center">
+              <img
+                src={logoImg}
+                alt="Vedic Pooja Logo"
+                className="animated-logo"
+              />
+              <div className="absolute inset-0 rounded-xl border-4 border-[#E67E22] opacity-20"></div>
+            </div>
             <img
               src="https://placehold.co/400x250/FFF7E6/800000?text=Father's+Photo"
               alt="Pandit Ji's Father"
@@ -847,25 +860,19 @@ const AboutPreview = () => {
 };
 
 const GallerySection = () => {
-  const galleryImagesRow1 = [
-    "https://placehold.co/600x400/FFF7E6/800000?text=Ritual+1",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Wedding+Ceremony",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Havan",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Blessings",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Sacred+Fire",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Family+Pooja",
-  ];
-  const galleryImagesRow2 = [
-    "https://placehold.co/600x400/FFF7E6/800000?text=Offerings",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Mantras",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Devotion",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Puja+Samagri",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Aarti",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Celebration",
+  const mediaItems = [
+    { type: "image", src: poojaPerforming2 },
+    { type: "image", src: poojaPerforming },
+    { type: "image", src: poojaSetup },
+    { type: "image", src: shadi },
+    { type: "video", src: poojaSetupVideo },
+    { type: "video", src: poojaVideoComplete },
+    { type: "video", src: poojaVideoWebsite },
+    { type: "video", src: vid2025 },
   ];
 
-  const duplicatedImages1 = [...galleryImagesRow1, ...galleryImagesRow1];
-  const duplicatedImages2 = [...galleryImagesRow2, ...galleryImagesRow2];
+  const mediaRow1 = [...mediaItems, ...mediaItems];
+  const mediaRow2 = [...mediaItems, ...mediaItems];
 
   return (
     <section className="py-20 bg-transparent overflow-hidden">
@@ -890,16 +897,26 @@ const GallerySection = () => {
             animate={{ x: ["-100%", "0%"] }}
             transition={{ ease: "linear", duration: 80, repeat: Infinity }}
           >
-            {duplicatedImages1.map((img, index) => (
+            {mediaRow1.map((item, index) => (
               <div
                 key={`r1-${index}`}
                 className="flex-shrink-0 w-[400px] h-[250px] overflow-hidden rounded-lg shadow-lg"
               >
-                <img
-                  src={img}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    autoPlay
+                  />
+                )}
               </div>
             ))}
           </motion.div>
@@ -908,16 +925,26 @@ const GallerySection = () => {
             animate={{ x: ["0%", "-100%"] }}
             transition={{ ease: "linear", duration: 80, repeat: Infinity }}
           >
-            {duplicatedImages2.map((img, index) => (
+            {mediaRow2.map((item, index) => (
               <div
                 key={`r2-${index}`}
                 className="flex-shrink-0 w-[400px] h-[250px] overflow-hidden rounded-lg shadow-lg"
               >
-                <img
-                  src={img}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    autoPlay
+                  />
+                )}
               </div>
             ))}
           </motion.div>
@@ -1286,11 +1313,8 @@ const Footer = () => {
           </h3>
           <p className="mb-2">
             Email:{" "}
-            <a
-              href="mailto:amardwivedi792@gmail.com"
-              className="hover:text-white"
-            >
-              amardwivedi792@gmail.com
+            <a href="mailto:vedicpuja6@gmail.com" className="hover:text-white">
+              vedicpuja6@gmail.com
             </a>
           </p>
           <p className="mb-2">
@@ -1326,6 +1350,32 @@ export default function App() {
     const style = document.createElement("style");
     style.innerHTML = `
             @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@400;700&display=swap');
+
+            .animated-logo {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                animation: spin 15s linear infinite, glow 3s ease-in-out infinite alternate;
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes glow {
+                from {
+                    box-shadow: 0 0 20px rgba(230, 126, 34, 0.5);
+                }
+                to {
+                    box-shadow: 0 0 40px rgba(230, 126, 34, 0.8);
+                }
+            }
         `;
     document.head.appendChild(style);
   }, []);

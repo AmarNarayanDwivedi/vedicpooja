@@ -44,31 +44,31 @@ export default function App() {
     }, []);
     if (!open) return null;
     return (
-      <div className="fixed bottom-24 right-5 z-50">
-        <div className="bg-white rounded-xl shadow-2xl border border-[#E67E22] p-4 w-80 relative">
+      <div className="fixed bottom-24 right-2 sm:right-5 z-50">
+        <div className="bg-white rounded-xl shadow-2xl border border-[#E67E22] p-3 sm:p-4 w-72 sm:w-80 relative">
           <button
             onClick={() => setOpen(false)}
             className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
           >
             ×
           </button>
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-2xl">📸</span>
+          <div className="flex items-center gap-2 sm:gap-3 mb-2">
+            <span className="text-xl sm:text-2xl">📸</span>
             <div>
-              <div className="font-bold text-[#800000]">
+              <div className="font-bold text-[#800000] text-sm sm:text-base">
                 Follow us on Instagram
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-xs sm:text-sm text-gray-600">
                 Check our Insta page for latest pooja updates
               </div>
             </div>
           </div>
-          <div className="flex gap-2 mt-2">
+          <div className="flex flex-col sm:flex-row gap-2 mt-2">
             <a
               href="https://instagram.com/adityanarayan3081"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center py-2 rounded-lg border border-[#E67E22] text-[#E67E22] hover:bg-[#E67E22] hover:text-white transition-colors"
+              className="flex-1 text-center py-2 rounded-lg border border-[#E67E22] text-[#E67E22] hover:bg-[#E67E22] hover:text-white transition-colors text-sm sm:text-base"
             >
               Open Instagram
             </a>
@@ -78,7 +78,7 @@ export default function App() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center py-2 rounded-lg bg-green-500 text-white hover:bg-green-600"
+              className="flex-1 text-center py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 text-sm sm:text-base"
             >
               WhatsApp
             </a>

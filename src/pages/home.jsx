@@ -14,6 +14,17 @@ import vastuShantiImg from "../assets/Blog/navagrahapooja.webp";
 import marriageMuhuratImg from "../assets/Blog/rakshabandhan.webp";
 import kaalSarpDoshImg from "../assets/poojas/kalsarpdosh.webp";
 
+import galleryImg1 from "../assets/HeroPage/pooja_glimpshiss/pooja-performing-2.webp";
+import galleryImg2 from "../assets/HeroPage/pooja_glimpshiss/pooja-performing.webp";
+import galleryImg3 from "../assets/HeroPage/pooja_glimpshiss/pooja-setup.webp";
+import galleryImg4 from "../assets/HeroPage/pooja_glimpshiss/shadi.webp";
+import galleryVid1 from "../assets/HeroPage/pooja_glimpshiss/video/Pooja_Setup_Video_Creation.webm";
+import galleryVid2 from "../assets/HeroPage/pooja_glimpshiss/video/Pooja_Video_Generation_Complete.webm";
+import galleryVid3 from "../assets/HeroPage/pooja_glimpshiss/video/Pooja_Video_Generation_For_Website.webm";
+import galleryVid4 from "../assets/HeroPage/pooja_glimpshiss/video/VID_20250722_063314_767.webm";
+// Pandit Ji photo
+import panditJiImg from "../assets/HeroPage/pooja_glimpshiss/frontphoto.webp";
+
 // Helper Icons
 const StarIcon = ({ filled = true }) => (
   <svg
@@ -482,7 +493,7 @@ const WhyChooseUsSection = () => {
     },
     {
       icon: <PoojaPerformedIcon />,
-      number: 1000000,
+      number: 10000,
       title: t.poojasPerformed,
       description: t.performedDesc,
     },
@@ -571,13 +582,8 @@ const AboutPreview = () => {
             transition={{ duration: 0.7 }}
           >
             <img
-              src="https://placehold.co/400x400/FFF7E6/800000?text=Pandit+Ji"
+              src={panditJiImg}
               alt="About Pandit Ji"
-              className="rounded-xl shadow-lg w-full"
-            />
-            <img
-              src="https://placehold.co/400x250/FFF7E6/800000?text=Father's+Photo"
-              alt="Pandit Ji's Father"
               className="rounded-xl shadow-lg w-full"
             />
           </motion.div>
@@ -624,25 +630,41 @@ const AboutPreview = () => {
 };
 
 const GallerySection = () => {
-  const galleryImagesRow1 = [
-    "https://placehold.co/600x400/FFF7E6/800000?text=Ritual+1",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Wedding+Ceremony",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Havan",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Blessings",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Sacred+Fire",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Family+Pooja",
-  ];
-  const galleryImagesRow2 = [
-    "https://placehold.co/600x400/FFF7E6/800000?text=Offerings",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Mantras",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Devotion",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Puja+Samagri",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Aarti",
-    "https://placehold.co/600x400/FFF7E6/800000?text=Celebration",
+  // This array now uses the imported variables
+  const mediaItems = [
+    {
+      type: "image",
+      src: galleryImg1, // Changed from string
+    },
+    {
+      type: "image",
+      src: galleryImg2, // Changed from string
+    },
+    {
+      type: "image",
+      src: galleryImg3, // Changed from string
+    },
+    { type: "image", src: galleryImg4 }, // Changed from string
+    {
+      type: "video",
+      src: galleryVid1, // Changed from string
+    },
+    {
+      type: "video",
+      src: galleryVid2, // Changed from string
+    },
+    {
+      type: "video",
+      src: galleryVid3, // Changed from string
+    },
+    {
+      type: "video",
+      src: galleryVid4, // Changed from string
+    },
   ];
 
-  const duplicatedImages1 = [...galleryImagesRow1, ...galleryImagesRow1];
-  const duplicatedImages2 = [...galleryImagesRow2, ...galleryImagesRow2];
+  const mediaRow1 = [...mediaItems, ...mediaItems];
+  const mediaRow2 = [...mediaItems, ...mediaItems];
 
   return (
     <section className="py-20 bg-transparent overflow-hidden">
@@ -667,16 +689,27 @@ const GallerySection = () => {
             animate={{ x: ["-100%", "0%"] }}
             transition={{ ease: "linear", duration: 80, repeat: Infinity }}
           >
-            {duplicatedImages1.map((img, index) => (
+            {mediaRow1.map((item, index) => (
               <div
                 key={`r1-${index}`}
                 className="flex-shrink-0 w-[400px] h-[250px] overflow-hidden rounded-lg shadow-lg"
               >
-                <img
-                  src={img}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                  />
+                )}
               </div>
             ))}
           </motion.div>
@@ -685,16 +718,27 @@ const GallerySection = () => {
             animate={{ x: ["0%", "-100%"] }}
             transition={{ ease: "linear", duration: 80, repeat: Infinity }}
           >
-            {duplicatedImages2.map((img, index) => (
+            {mediaRow2.map((item, index) => (
               <div
                 key={`r2-${index}`}
                 className="flex-shrink-0 w-[400px] h-[250px] overflow-hidden rounded-lg shadow-lg"
               >
-                <img
-                  src={img}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                  />
+                )}
               </div>
             ))}
           </motion.div>
