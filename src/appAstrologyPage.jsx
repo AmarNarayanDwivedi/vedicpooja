@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Star, ChevronDown, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from '@/context/LanguageContext.jsx';
 
 // --- Helper Functions & Data ---
 
-// Translations for multi-language support
-const translations = {
+// Extended translations for astrology page (merged with global translations)
+// These will be added to the main LanguageContext later, but for now using inline fallbacks
+const astrologyPageTranslations = {
   en: {
-    logo: 'Divine Rituals',
-    navAstrology: 'Astrology',
-    consultNow: 'Consult Now',
     astrologyHeroTitle: 'Discover the Power of Astrology with Expert Guidance',
     all: 'All',
     marriage: 'Marriage',
@@ -22,9 +21,6 @@ const translations = {
     bookYourSession: 'Book Your Session!',
   },
   hi: {
-    logo: 'दिव्य अनुष्ठान',
-    navAstrology: 'ज्योतिष',
-    consultNow: 'अभी परामर्श करें',
     astrologyHeroTitle: 'विशेषज्ञ मार्गदर्शन के साथ ज्योतिष की शक्ति की खोज करें',
     all: 'सभी',
     marriage: 'विवाह',
@@ -66,26 +62,7 @@ const astrologyServices = [
 
 // --- Reusable Components ---
 
-const Header = ({ language, setLanguage, t }) => {
-    return (
-        <header className="bg-[#FFF7E6]/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <h1 className="text-2xl font-playfair font-bold text-[#800000]">{t.logo}</h1>
-                <nav className="hidden md:flex items-center space-x-8 font-poppins text-lg text-[#800000]">
-                    <a className="text-[#E67E22] font-semibold cursor-pointer">{t.navAstrology}</a>
-                </nav>
-                <div className="flex items-center space-x-4">
-                    <div className="relative font-poppins">
-                        <button onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')} className="flex items-center justify-center w-28 h-10 bg-[#800000] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E67E22] transition-transform transform hover:scale-105">
-                            <span className="mr-2">{language === 'en' ? 'English' : 'हिन्दी'}</span>
-                            <ChevronDown className="w-4 h-4" />
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
-    );
-};
+// Header removed - using global Header component from src/components/header.jsx
 
 const BookingPopup = ({ t, onBook }) => {
     const [isOpen, setIsOpen] = useState(true);
@@ -180,7 +157,14 @@ const CosmicBackground = () => {
 
 
 const AstrologyPage = ({ language, handleBooking }) => {
-    const t = translations[language];
+    const { t: globalT } = useTranslation();
+    const pageT = astrologyPageTranslations[language] || astrologyPageTranslations.en;
+    
+    // Merge global translations with page-specific translations
+    const t = {
+        ...globalT,
+        ...pageT,
+    };
     const categories = ['all', 'marriage', 'career', 'health', 'finance', 'spiritual'];
     const [activeFilter, setActiveFilter] = useState('all');
 
@@ -290,12 +274,9 @@ const AstrologyPage = ({ language, handleBooking }) => {
 
 // --- Main App Component ---
 
-import { useTranslation as useGlobalLang } from './context/LanguageContext.jsx';
-
 export default function AstrologyPageView() {
-  const { language } = useGlobalLang();
-  const lang = translations[language] ? language : 'en';
-  const t = translations[lang];
+  const { language } = useTranslation();
+  const lang = language || 'en';
 
   const handleBooking = (serviceTitle, planName, price) => {
     const base = serviceTitle ? `consult about *${serviceTitle}*` : 'schedule a general astrology consultation';

@@ -2080,7 +2080,8 @@ const BlogList = ({ posts, onReadMore, onTagSelect, activeTag, lang }) => {
           >
             <img
               src={post.image}
-              alt={post.title[lang]}
+              alt={`${post.title[lang]} - Vedic astrology and pooja guidance in Pune`}
+              loading="lazy"
               className="w-full h-48 object-cover"
             />
             <div className="p-6 flex flex-col flex-grow">
@@ -2143,7 +2144,8 @@ const BlogDetail = ({ post, onBack, lang }) => {
       <main className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden">
         <img
           src={post.image}
-          alt={post.title[lang]}
+          alt={`${post.title[lang]} - Vedic astrology and pooja guidance in Pune`}
+          loading="lazy"
           className="w-full h-64 md:h-80 object-cover"
         />
         <article className="p-6 md:p-10 font-poppins">

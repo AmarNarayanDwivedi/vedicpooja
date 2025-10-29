@@ -1,4 +1,3 @@
-import React from 'react';
 import { buildWhatsAppUrl } from '@/lib/utils';
 
 export default function FloatingWhatsApp({ phoneNumber = '918668552465', label = 'Book Now' }) {

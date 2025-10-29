@@ -1,8 +1,8 @@
-import panditJiImg from "./assets/HeroPage/pooja_glimpshiss/frontphoto.webp";
-import React, { useEffect, useState, useRef } from "react";
-// In a real Next.js app, you'd import 'motion', 'useInView', 'animate' from 'framer-motion'.
-// We'll simulate their behavior and props for this single-file environment.
+import panditJiImg from "@/assets/HeroPage/pooja_glimpshiss/frontphoto.webp";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation as useGlobalLang } from "@/context/LanguageContext.jsx";
+import AnimatedCounter from "@/components/shared/AnimatedCounter.jsx";
 
 // --- Language Data ---
 const translations = {
@@ -85,49 +85,6 @@ const CheckBadgeIcon = ({ className }) => (
 );
 
 // --- Reusable Animated Components ---
-const AnimatedCounter = ({ to }) => {
-  const ref = useRef(null);
-  const [isInView, setIsInView] = useState(false);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsInView(true);
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => ref.current && observer.unobserve(ref.current);
-  }, [ref]);
-
-  useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const duration = 2000,
-        stepTime = 20,
-        steps = duration / stepTime;
-      const increment = to / steps;
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= to) {
-          setCount(to);
-          clearInterval(timer);
-        } else {
-          setCount(Math.ceil(start));
-        }
-      }, stepTime);
-      return () => clearInterval(timer);
-    }
-  }, [isInView, to]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {new Intl.NumberFormat("en-IN").format(count)}+
-    </span>
-  );
-};
 
 // --- Shadcn/UI Inspired Primitives ---
 const Card = ({ children, className = "" }) => (
@@ -274,7 +231,8 @@ const PlanetaryHero = ({ lang }) => {
       <div className="container mx-auto px-6 z-10 fade-in-scroll">
         <img
           src={panditJiImg}
-          alt="Portrait of Pandit Aditya Narayan Ji"
+          alt="Pandit Aditya Narayan Ji - Experienced Vedic priest performing traditional Hindu rituals in Pune"
+          loading="lazy"
           className="mx-auto rounded-full w-32 h-32 md:w-36 md:h-36 object-cover border-4 border-accent shadow-2xl mb-6"
           style={{
             boxShadow:
@@ -325,9 +283,7 @@ const StatsSection = ({ lang }) => {
               className="p-4 rounded-lg hover:bg-primary/5 transition-colors duration-300 fade-in-scroll"
               style={{ animationDelay: `${i * 0.15}s` }}
             >
-              <p className="text-4xl md:text-5xl font-bold text-primary font-playfair">
-                <AnimatedCounter to={stat.number} />
-              </p>
+              <AnimatedCounter to={stat.number} />
               <p className="mt-1 text-lg font-semibold">{stat.label}</p>
               <p className="text-sm text-secondary/70">{stat.subtext}</p>
             </div>
@@ -345,7 +301,8 @@ const IntroFactsSection = ({ lang }) => (
         <Card className="p-2 bg-white shadow-xl">
           <img
             src={panditJiImg}
-            alt="Pandit Aditya Narayan Ji"
+            alt="Pandit Aditya Narayan Ji - Experienced Vedic priest performing traditional Hindu rituals in Pune"
+            loading="lazy"
             className="rounded-lg w-full h-auto"
           />
         </Card>
@@ -693,8 +650,6 @@ const CtaFooterBlock = ({ lang }) => (
     </div>
   </section>
 );
-
-import { useTranslation as useGlobalLang } from "./context/LanguageContext.jsx";
 
 export default function AboutPage() {
   const { language } = useGlobalLang();

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from '../context/LanguageContext.jsx';
+import { useTranslation } from '@/context/LanguageContext.jsx';
 
 export default function Footer() {
   const { t } = useTranslation();

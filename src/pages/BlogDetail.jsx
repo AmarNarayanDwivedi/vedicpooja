@@ -1,10 +1,9 @@
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useTranslation } from "../context/LanguageContext.jsx";
-import vastuShantiImg from "../assets/Blog/navagrahapooja.webp";
-import marriageMuhuratImg from "../assets/Blog/rakshabandhan.webp";
-import kaalSarpDoshImg from "../assets/poojas/kalsarpdosh.webp";
+import { useTranslation } from "@/context/LanguageContext.jsx";
+import vastuShantiImg from "@/assets/Blog/navagrahapooja.webp";
+import marriageMuhuratImg from "@/assets/Blog/rakshabandhan.webp";
+import kaalSarpDoshImg from "@/assets/poojas/kalsarpdosh.webp";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -167,7 +166,8 @@ Regular meditation and charity work can also help mitigate the negative effects 
           <div className="overflow-hidden h-64 md:h-80">
             <img
               src={post.image}
-              alt={post.title}
+              alt={`${post.title} - Vedic astrology and pooja remedies in Pune`}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </div>
@@ -263,7 +263,7 @@ Regular meditation and charity work can also help mitigate the negative effects 
                   Book Consultation
                 </Link>
                 <Link
-                  to="/#blog"
+                  to="/blog"
                   className="flex-1 bg-gray-100 text-[#800000] font-bold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors duration-300 text-center border border-gray-300"
                 >
                   ← Back to Blog
