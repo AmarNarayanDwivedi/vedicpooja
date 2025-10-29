@@ -19,6 +19,7 @@ const HeroSection = ({ onBookPoojaClick }) => {
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Auto-rotate slides every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -26,6 +27,7 @@ const HeroSection = ({ onBookPoojaClick }) => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
+  // Handle WhatsApp booking click with pre-filled message
   const handleWhatsAppClick = () => {
     const msg = encodeURIComponent(
       "Namaste 🙏 I would like to consult about astrology/pooja. Please guide me."

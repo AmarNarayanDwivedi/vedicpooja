@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 // Translations copied from Home (Hero) page
 export const translations = {
@@ -142,6 +142,18 @@ export const translations = {
     footerPoojaServices: "पूजा सेवा",
     footerQuickLinks: "जलद लिंक्स",
     footerContactInfo: "संपर्क माहिती",
+    // Astrology page translations
+    astrologyHeroTitle: "विशेषज्ञ मार्गदर्शनासह ज्योतिषाची शक्ती शोधा",
+    all: "सर्व",
+    marriage: "विवाह",
+    career: "करियर",
+    health: "आरोग्य",
+    finance: "आर्थिक",
+    spiritual: "आध्यात्मिक",
+    footerCTA: "आत्ताच व्हॉट्सॲपवर तुमची ज्योतिष सल्ला शेड्यूल करा 📱।",
+    consultationPrice: "सल्ला सुरू होते",
+    bookYourSession: "तुमचे सत्र बुक करा!",
+    consultNow: "आता सल्ला घ्या",
   },
   kn: {
     navHome: "ಮುಖಪುಟ",
@@ -189,6 +201,20 @@ export const translations = {
     footerPoojaServices: "ಪೂಜಾ ಸೇವೆಗಳು",
     footerQuickLinks: "ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",
     footerContactInfo: "ಸಂಪರ್ಕ ಮಾಹಿತಿ",
+    // Astrology page translations
+    astrologyHeroTitle:
+      "ವಿಶೇಷಜ್ಞ ಮಾರ್ಗದರ್ಶನದೊಂದಿಗೆ ಜ್ಯೋತಿಷ್ಯದ ಶಕ್ತಿಯನ್ನು ಕಂಡುಹಿಡಿಯಿರಿ",
+    all: "ಎಲ್ಲಾ",
+    marriage: "ವಿವಾಹ",
+    career: "ವೃತ್ತಿ",
+    health: "ಆರೋಗ್ಯ",
+    finance: "ಹಣಕಾಸು",
+    spiritual: "ಆಧ್ಯಾತ್ಮಿಕ",
+    footerCTA:
+      "ಈಗಲೇ ವ್ಹಾಟ್ಸ್‌ಆಪ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಜ್ಯೋತಿಷ್ಯ ಸಲಹೆಯನ್ನು ಶೆಡ್ಯೂಲ್ ಮಾಡಿ 📱।",
+    consultationPrice: "ಸಲಹೆ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ",
+    bookYourSession: "ನಿಮ್ಮ ಅಧಿವೇಶನವನ್ನು ಬುಕ್ ಮಾಡಿ!",
+    consultNow: "ಈಗಲೇ ಸಲಹೆ ಪಡೆಯಿರಿ",
   },
   gj: {
     navHome: "હોમ",
@@ -236,13 +262,29 @@ export const translations = {
     footerPoojaServices: "પૂજા સેવાઓ",
     footerQuickLinks: "ઝડપી લિંક્સ",
     footerContactInfo: "સંપર્ક માહિતી",
+    // Astrology page translations
+    astrologyHeroTitle: "જ્યોતિષની શક્તિની શોધ કરો — વિશેષજ્ઞ માર્ગદર્શન સાથે",
+    all: "બધા",
+    marriage: "લગ્ન",
+    career: "કારકિર્દી",
+    health: "સ્વાસ્થ્ય",
+    finance: "નાણાકીય",
+    spiritual: "આધ્યાત્મિક",
+    footerCTA: "હમણાં જ વ્હાટ્સએપ પર તમારી જ્યોતિષ સલાહ શેડ્યૂલ કરો 📱।",
+    consultationPrice: "સલાહ શરૂ થાય છે",
+    bookYourSession: "તમારું સત્ર બુક કરો!",
+    consultNow: "હમણાં સલાહ લો",
   },
 };
 
-const LanguageContext = createContext({ language: 'en', setLanguage: () => {}, t: translations.en });
+const LanguageContext = createContext({
+  language: "en",
+  setLanguage: () => {},
+  t: translations.en,
+});
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState("en");
   const t = translations[language] || translations.en;
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
