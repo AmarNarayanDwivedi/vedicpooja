@@ -1,8 +1,8 @@
 import React from 'react';
+import { buildWhatsAppUrl } from '@/lib/utils';
 
 export default function FloatingWhatsApp({ phoneNumber = '918668552465', label = 'Book Now' }) {
-  const params = new URLSearchParams({ text: 'Namaste 🙏 I want to book a pooja. Congratulations! You got 10% OFF 🎉' });
-  const whatsappUrl = `https://wa.me/${phoneNumber}?${params.toString()}`;
+  const whatsappUrl = buildWhatsAppUrl(phoneNumber, 'Namaste 🙏 I want to book a pooja. Congratulations! You got 10% OFF 🎉');
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">

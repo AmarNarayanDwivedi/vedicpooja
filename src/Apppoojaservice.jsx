@@ -5,6 +5,7 @@ import { Star, StarHalf, CheckCircle, Phone, X, PartyPopper, Search } from 'luci
 import { poojaServicesData } from './data/poojaServices.js';
 import { Input } from './components/ui/input';
 import { Button } from './components/ui/button';
+import { slugify, buildWhatsAppUrl } from './lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from './components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import { Toggle } from './components/ui/toggle';
@@ -404,7 +405,7 @@ const PoojaCard = ({ pooja, setIsNavigating }) => {
   const numReviews = pooja.reviews.length;
 
   // Create slug from name
-  const slug = pooja.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+  const slug = slugify(pooja.name);
 
   return (
     <motion.div
@@ -547,13 +548,13 @@ const PoojaDetail = ({ setIsNavigating }) => {
   }, [slug, setIsNavigating]);
 
   // "Fetch" pooja from comprehensive data
-  const pooja = poojaServicesData.find(p => p.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '') === slug);
+  const pooja = poojaServicesData.find(p => slugify(p.name) === slug);
 
   const WHATSAPP_NUMBER = '918668552465';
 
   const handleWhatsAppBook = (packageName, price) => {
     const message = `Namaste 🙏, I want to book ${pooja.name} - ${packageName} package (₹${price.toLocaleString('en-IN')}). Congratulations! You unlocked 10% OFF today 🎉. Please provide details.`;
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = buildWhatsAppUrl(WHATSAPP_NUMBER, message);
     window.open(whatsappUrl, '_blank');
   };
 

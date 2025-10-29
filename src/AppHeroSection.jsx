@@ -1401,7 +1401,7 @@ export default function App() {
             <ServicesOverview />
             <AboutPreview />
             <WhyChooseUsSection />
-            <PopularPoojasSection onBookPoojaClick={onBookPoojaClick} />
+            <PopularPoojasSection onBookPoojaClick={handleBookPoojaClick} />
             <GallerySection />
             <TestimonialsSlider />
             <BlogSection />

@@ -1,9 +1,44 @@
 # Dependencies
 /node_modules
 
-# Build folder
-/dist
+# Build output
+/dist/
+/.vite/
 
-# Vite
-.vite
+# Test coverage
+/coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Env files (do not commit secrets)
+.env
+.env.*
+.env.local
+.env.*.local
+
+# Editor/OS
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Lint/Cache
+.eslintcache
+*.tsbuildinfo
+
+# Tooling deploy configs
+.vercel/
+.netlify/
+
+# Misc
 *.local

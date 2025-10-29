@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { slugify } from '@/lib/utils';
 import { useTranslation } from '../context/LanguageContext.jsx';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
@@ -13,7 +14,7 @@ const PoojaCard = ({ pooja, className = "", onBookClick }) => {
   const numReviews = pooja.reviews.length;
 
   // Create slug from name
-  const slug = pooja.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+  const slug = slugify(pooja.name);
 
   return (
     <Link to={`/pooja/${slug}`} className={`block h-full ${className}`}>

@@ -337,13 +337,13 @@ const HeroSection = ({ onBookPoojaClick }) => {
           transition={{ duration: 0.7, delay: 1.1 }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <a
-            href="/pooja"
+          <button
+            onClick={onBookPoojaClick}
             className="btn-premium px-8 py-3 bg-[#E67E22] text-white font-bold rounded-lg shadow-xl hover:bg-[#c66919] relative group"
           >
             <span className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-white transition-all duration-300"></span>
             {t.bookPoojaNow}
-          </a>
+          </button>
           <button
             onClick={() => {
               const msg = encodeURIComponent(

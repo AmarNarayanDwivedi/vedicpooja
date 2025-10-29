@@ -739,7 +739,7 @@ export default function AboutPage() {
 
         .rotating-chakra {
             width: 150%; height: 150%; top: -25%; left: -25%;
-            background-image: url('data:image/svg+xml;utf8,<svg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"%23E67E22\" stroke-width=\"0.5\" fill=\"none\" stroke-dasharray=\"2 4\"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" stroke="%23E67E22" stroke-width="0.5" fill="none" stroke-dasharray="2 4"/></svg>');
             background-size: 200px 200px;
             animation: spin 120s linear infinite;
         }

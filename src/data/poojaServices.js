@@ -444,7 +444,7 @@ export const poojaServicesData = [
       premium: 50000,
     },
     includes: {
-      basic: ["1 Pandits", , "Saptapadi & Vachan", "Kanyadaan Sankalp"],
+      basic: ["1 Pandits", "Saptapadi & Vachan", "Kanyadaan Sankalp"],
       standard: [
         "All Basic features",
         "Premium Samagri",
