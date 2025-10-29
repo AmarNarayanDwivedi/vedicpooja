@@ -5,7 +5,7 @@ import { LanguageProvider } from "./context/LanguageContext.jsx";
 import Header from "./components/header.jsx";
 import Footer from "./components/footer.jsx";
 import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 // Lazy load pages for code splitting
 const Home = lazy(() => import("./pages/home.jsx"));
@@ -107,8 +107,8 @@ export default function App() {
           backgroundSize: "cover, cover, cover, 60px 60px",
         }}
       >
+        <Analytics />
         <BrowserRouter>
-          <Analytics />
           <ScrollToHash />
           <Header />
           <main className="pt-20">

@@ -3,10 +3,30 @@ import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import sitemap from "vite-plugin-sitemap";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    sitemap({
+      hostname: "https://www.vedic-pooja.com",
+      routes: [
+        "/",
+        "/about",
+        "/astrology",
+        "/pooja",
+        "/blog",
+        "/blog/1",
+        "/blog/2",
+        "/blog/3",
+        "/pooja/open",
+      ],
+      changefreq: "weekly",
+      priority: 0.8,
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
