@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useTranslation } from "@/context/LanguageContext.jsx";
+import { useTranslation } from "../context/LanguageContext.jsx";
 import vastuShantiImg from "@/assets/Blog/navagrahapooja.webp";
 import marriageMuhuratImg from "@/assets/Blog/rakshabandhan.webp";
 import kaalSarpDoshImg from "@/assets/poojas/kalsarpdosh.webp";
@@ -166,7 +166,7 @@ Regular meditation and charity work can also help mitigate the negative effects 
           <div className="overflow-hidden h-64 md:h-80">
             <img
               src={post.image}
-              alt={`${post.title} - Vedic astrology and pooja remedies in Pune`}
+              alt={`Vedic astrology and pooja guidance: ${post.title} in Pune, India`}
               loading="lazy"
               className="w-full h-full object-cover"
             />

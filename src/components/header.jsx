@@ -21,20 +21,9 @@ const NavLink = ({ to, children }) => {
 };
 
 const NavLinkHash = ({ to, children }) => {
-  const location = useLocation();
-  const [pathname] = to.split('#');
-  
-  const handleClick = (e) => {
-    if (location.pathname !== pathname && location.pathname !== '/') {
-      e.preventDefault();
-      window.location.href = to;
-    }
-  };
-
   return (
     <Link
       to={to}
-      onClick={handleClick}
       className="relative group font-semibold py-2 text-gray-700 hover:text-[#E67E22] transition-colors"
     >
       <span className="relative z-10">{children}</span>
@@ -216,13 +205,7 @@ export default function Header() {
             </Link>
             <Link
               to="/#testimonials"
-              onClick={(e) => {
-                closeMenu();
-                if (location.pathname !== "/") {
-                  e.preventDefault();
-                  window.location.href = "/#testimonials";
-                }
-              }}
+              onClick={closeMenu}
               className="text-lg font-semibold text-gray-700 hover:text-[#E67E22] transition-colors py-2 border-b border-gray-300 w-full"
             >
               {t.navTestimonials}
@@ -236,13 +219,7 @@ export default function Header() {
             </Link>
             <Link
               to="/#contact"
-              onClick={(e) => {
-                closeMenu();
-                if (location.pathname !== "/") {
-                  e.preventDefault();
-                  window.location.href = "/#contact";
-                }
-              }}
+              onClick={closeMenu}
               className="text-lg font-semibold text-gray-700 hover:text-[#E67E22] transition-colors py-2 border-b border-gray-300 w-full"
             >
               {t.navContact}
@@ -260,7 +237,7 @@ export default function Header() {
           <div className="absolute top-4 left-4 flex items-center gap-2">
             <img
               src={logo}
-              alt="Vedic Pooja Logo - Authentic Hindu rituals and astrology services in Pune"
+              alt="Vedic Pooja Services - Authentic Hindu rituals and astrology in Pune, India"
               loading="lazy"
               className="h-8 w-8"
             />

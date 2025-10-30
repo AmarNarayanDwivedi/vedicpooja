@@ -1,29 +1,29 @@
 import React, { useState, useMemo } from "react";
-import dailyPoojaImg from "./assets/Blog/dailyremedies&planetarybalance.webp";
-import sundaySuryaImg from "./assets/Blog/suryapooja.webp";
-import mondayChandraImg from "./assets/Blog/purnimavrat.webp";
-import tuesdayMangalImg from "./assets/Blog/mangaldosha.webp";
-import wednesdayBudhImg from "./assets/Blog/budh&gururemedies.webp";
-import shaniSaturnImg from "./assets/Blog/shanidosharemedies.webp";
-import rahuImg from "./assets/Blog/rahu-keturemedies.webp";
-import ketuImg from "./assets/Blog/rahu-keturemedies.webp";
-import mangalDoshImg from "./assets/Blog/mangaldosha.webp";
-import kaalSarpImg from "./assets/poojas/kalsarpdosh.webp";
-import pitraDoshImg from "./assets/Blog/amavasyaremedies.webp";
-import shaniDoshImg from "./assets/Blog/shanidosharemedies.webp";
-import chandraDoshImg from "./assets/Blog/purnimavrat.webp";
-import ganeshPoojanImg from "./assets/Blog/ganeshpoojan.webp";
-import diwaliImg from "./assets/Blog/diwalifestival.webp";
-import holiImg from "./assets/Blog/holifestival.webp";
-import purnimaAmavasyaImg from "./assets/Blog/purnimavrat.webp";
-import guruPurnimaImg from "./assets/Blog/gurupurnima.webp";
-import grihaPraveshImg from "./assets/Blog/navagrahapooja.webp";
+import dailyRemediesImg from "../assets/Blog/dailyremedies&planetarybalance.webp";
+import sundaySuryaImg from "../assets/Blog/suryapooja.webp";
+import mondayChandraImg from "../assets/Blog/purnimavrat.webp";
+import tuesdayMangalImg from "../assets/Blog/mangaldosha.webp";
+import wednesdayBudhImg from "../assets/Blog/budh&gururemedies.webp";
+import shaniSaturnImg from "../assets/Blog/shanidosharemedies.webp";
+import rahuImg from "../assets/Blog/rahu-keturemedies.webp";
+import ketuImg from "../assets/Blog/rahu-keturemedies.webp";
+import mangalDoshImg from "../assets/Blog/mangaldosha.webp";
+import kaalSarpImg from "../assets/poojas/kalsarpdosh.webp";
+import pitraDoshImg from "../assets/Blog/amavasyaremedies.webp";
+import shaniDoshImg from "../assets/Blog/shanidosharemedies.webp";
+import chandraDoshImg from "../assets/Blog/purnimavrat.webp";
+import ganeshPoojanImg from "../assets/Blog/ganeshpoojan.webp";
+import diwaliImg from "../assets/Blog/diwalifestival.webp";
+import holiImg from "../assets/Blog/holifestival.webp";
+import purnimaAmavasyaImg from "../assets/Blog/purnimavrat.webp";
+import guruPurnimaImg from "../assets/Blog/gurupurnima.webp";
+import grihaPraveshImg from "../assets/Blog/navagrahapooja.webp";
 
 // --- MOCK DATA (Simulating MongoDB Fetch with Multi-language support) ---
 const allPosts = [
   {
     slug: "daily-pooja-at-home",
-    image: dailyPoojaImg,
+    image: dailyRemediesImg,
     readTime: "4 min read",
     tags: ["Remedies", "Rituals"],
     title: {
@@ -2198,7 +2198,7 @@ const BlogDetail = ({ post, onBack, lang }) => {
 };
 
 // --- Main App Component ---
-export default function App() {
+export default function Blog() {
   const [selectedPost, setSelectedPost] = useState(null);
   const [activeTag, setActiveTag] = useState("All");
   const [language, setLanguage] = useState("en");

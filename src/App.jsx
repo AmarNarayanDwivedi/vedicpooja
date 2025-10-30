@@ -9,13 +9,13 @@ import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
 
 // Lazy load pages for code splitting
 const Home = lazy(() => import("./pages/home.jsx"));
-const AboutPage = lazy(() => import("./AppAboutpage.jsx"));
-const AstrologyPage = lazy(() => import("./appAstrologyPage.jsx"));
-const PoojaServicesPage = lazy(() => import("./Apppoojaservice.jsx"));
+const AboutPage = lazy(() => import("./pages/About.jsx"));
+const AstrologyPage = lazy(() => import("./pages/Astrology.jsx"));
+const PoojaServicesPage = lazy(() => import("./pages/PoojaServices.jsx"));
 const OpenPoojaServicePage = lazy(() =>
-  import("./AppOpenPoojaServicePage.jsx")
+  import("./pages/PoojaServiceDetail.jsx")
 );
-const BlogPage = lazy(() => import("./Appblog.jsx"));
+const BlogPage = lazy(() => import("./pages/Blog.jsx"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail.jsx"));
 
 export default function App() {
@@ -34,6 +34,9 @@ export default function App() {
             lateEl && lateEl.scrollIntoView({ behavior: "smooth" });
           }, 300);
         }
+      } else {
+        // Scroll to top when navigating to a new page without hash
+        window.scrollTo(0, 0);
       }
     }, [location]);
     return null;

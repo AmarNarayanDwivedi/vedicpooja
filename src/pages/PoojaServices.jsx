@@ -10,10 +10,10 @@ import {
   PartyPopper,
   Search,
 } from "lucide-react";
-import { poojaServicesData } from "./data/poojaServices.js";
-import { Input } from "./components/ui/input";
-import { Button } from "./components/ui/button";
-import { slugify, buildWhatsAppUrl } from "./lib/utils";
+import { poojaServicesData } from "../data/poojaServices.js";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { slugify, buildWhatsAppUrl } from "../lib/utils";
 import {
   Card,
   CardContent,
@@ -21,12 +21,17 @@ import {
   CardTitle,
   CardDescription,
   CardFooter,
-} from "./components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
-import { Toggle } from "./components/ui/toggle";
+} from "../components/ui/card";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
+import { Toggle } from "../components/ui/toggle";
 
 // Import banner image
-import serviceBannerImg from "./assets/Banner/service-page.webp";
+import serviceBannerImg from "../assets/Banner/service-page.webp";
 
 // --- I18N CONFIGURATION & CUSTOM HOOK ---
 const resources = {

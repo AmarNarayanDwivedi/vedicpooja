@@ -1,7 +1,7 @@
 import panditJiImg from "@/assets/HeroPage/pooja_glimpshiss/frontphoto.webp";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useTranslation as useGlobalLang } from "@/context/LanguageContext.jsx";
+import { useTranslation as useGlobalLang } from "../context/LanguageContext.jsx";
 import AnimatedCounter from "@/components/shared/AnimatedCounter.jsx";
 
 // --- Language Data ---

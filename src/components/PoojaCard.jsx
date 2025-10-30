@@ -29,7 +29,7 @@ const PoojaCard = ({ pooja, className = "", onBookClick }) => {
         <div className="overflow-hidden h-32 sm:h-36 md:h-40 rounded-t-lg">
           <img
             src={pooja.image}
-            alt={`Experienced pandit performing ${pooja.name} pooja in Pune`}
+            alt={`Traditional Hindu pooja service: ${pooja.name} performed by experienced pandit in Pune, India`}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />

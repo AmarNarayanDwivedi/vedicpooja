@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Star, ChevronDown, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslation } from "@/context/LanguageContext.jsx";
+import { useTranslation } from "../context/LanguageContext.jsx";
 import SEOMetadata from "@/components/SEOMetadata.jsx";
 
 // --- Helper Functions & Data ---
