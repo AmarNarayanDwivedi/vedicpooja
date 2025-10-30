@@ -831,11 +831,11 @@ export default function AstrologyPageView() {
   return (
     <div className="min-h-screen">
       <SEOMetadata
-        title="Astrology Services in Pune | Astrology Consultation Online India | Vedic Astrology"
-        description="Expert astrology services in Pune and online across India. Get personalized astrology consultations, Kundali matching, Vastu consultation, and gemstone recommendations from experienced Vedic astrologers."
-        keywords="astrology in Pune, astrology consultation online India, vedic astrology Pune, kundali matching Pune, vastu consultation Pune, gemstone recommendation astrology"
+        title="No.1 Astrology Consultation in Pune | 100% Authentic | 8668552465"
+        description="Get expert astrology consultation in Pune. Pune's no.1 website for Kundali matching, Vastu & predictions. 100% authentic guidance. Call 8668552465."
+        keywords="astrology in pune, astrologer pune, kundali matching pune, vastu consultation pune, 100% authentic astrology, 8668552465"
         canonical="https://www.vedic-pooja.com/astrology"
-        ogImage="https://www.vedic-pooja.com/assets/astrology-hero.jpg"
+        ogImage="https://www.vedic-pooja.com/assets/Banner/astrologyherosection.webp"
       />
       <script type="application/ld+json">
         {JSON.stringify({

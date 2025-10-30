@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import SEOMetadata from "@/components/SEOMetadata.jsx";
 import dailyRemediesImg from "../assets/Blog/dailyremedies&planetarybalance.webp";
 import sundaySuryaImg from "../assets/Blog/suryapooja.webp";
 import mondayChandraImg from "../assets/Blog/purnimavrat.webp";
@@ -2132,8 +2133,23 @@ const BlogDetail = ({ post, onBack, lang }) => {
     `Namaste 🙏 I want to book a consultation regarding: ${post.title[lang]}. Please guide me.`
   )}`;
 
+  const metaProps = {
+    title: `${post.title[lang]} | Vedic Pooja Blog | 8668552465`,
+    description: `${post.excerpt[lang].substring(
+      0,
+      110
+    )}... Read 100% authentic Vedic info on Pune's no.1 pooja website. Call 8668552465.`,
+    keywords: `blog, ${post.tags.join(", ")}, ${post.title[lang]
+      .split(" ")
+      .join(", ")}, 100% authentic vedic pooja, pune, 8668552465`,
+    canonical: `https://www.vedic-pooja.com/blog/${post.slug}`,
+    ogImage: `https://www.vedic-pooja.com${post.image.replace("../", "/")}`,
+    ogType: "article",
+  };
+
   return (
     <div>
+      <SEOMetadata {...metaProps} />
       <button
         onClick={onBack}
         className="flex items-center gap-2 px-4 py-2 mb-6 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-200 font-poppins"
@@ -2242,6 +2258,13 @@ export default function Blog() {
               .font-playfair { font-family: 'Playfair Display', serif; }
               .font-poppins { font-family: 'Poppins', sans-serif; }
             `}</style>
+      <SEOMetadata
+        title="Vedic Pooja & Astrology Blog | Pune's No.1 Pandit | 8668552465"
+        description="Read articles on Vastu, Doshas, and 100% authentic Vedic pooja rituals from Pune's no.1 pooja booking website. Learn more & call 8668552465."
+        keywords="vedic pooja blog, astrology blog, vastu tips, dosh nivaran blog, pune pandit blog, 8668552465"
+        canonical="https://www.vedic-pooja.com/blog"
+        ogImage="https://www.vedic-pooja.com/assets/Blog/kundalidoshasexplained.webp"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <LanguageSwitcher currentLang={language} setLang={setLanguage} />
         {selectedPost ? (

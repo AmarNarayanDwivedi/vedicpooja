@@ -1,6 +1,5 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 import { LanguageProvider } from "./context/LanguageContext.jsx";
 import Header from "./components/header.jsx";
@@ -136,7 +135,6 @@ export default function App() {
           <InstagramPopup />
           <Footer />
         </BrowserRouter>
-        <Analytics />
       </div>
     </LanguageProvider>
   );

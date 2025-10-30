@@ -23,12 +23,13 @@ export default function Home() {
   return (
     <>
       <SEOMetadata
-        title="Vedic Pooja Services in Pune | Authentic Hindu Rituals & Astrology | Pandit Booking"
-        description="Book authentic Vedic pooja services in Pune with experienced Pandits. Online pooja booking for weddings, housewarming, Satyanarayan Katha, and astrology consultations. 12+ years experience."
-        keywords="pooja booking Pune, pandit in Pune, astrology in Pune, online pooja booking India, vedic rituals Pune, satyanarayan katha Pune, griha pravesh pooja Pune"
+        title="Pune's No.1 Pooja Booking | 100% Authentic Vedic Pooja | 8668552465"
+        description="Book 100% authentic Vedic pooja services in Pune. Pune's no.1 website for experienced Pandits. Call 8668552465 for Griha Pravesh, Satyanarayan & more."
+        keywords="pooja booking pune, pandit in pune, vedic pooja pune, 100% authentic pooja, satyanarayan pooja pune, griha pravesh pooja pune, 8668552465"
         canonical="https://www.vedic-pooja.com/"
-        ogImage="https://www.vedic-pooja.com/logo.png"
+        ogImage="https://www.vedic-pooja.com/assets/Banner/ritualsbannerherosection.webp"
       />
+
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",

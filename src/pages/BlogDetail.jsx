@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "../context/LanguageContext.jsx";
+import SEOMetadata from "@/components/SEOMetadata.jsx";
 import vastuShantiImg from "@/assets/Blog/navagrahapooja.webp";
 import marriageMuhuratImg from "@/assets/Blog/rakshabandhan.webp";
 import kaalSarpDoshImg from "@/assets/poojas/kalsarpdosh.webp";
@@ -154,8 +155,23 @@ Regular meditation and charity work can also help mitigate the negative effects 
     );
   }
 
+  const metaProps = {
+    title: `${post.title} | Vedic Pooja Blog | 8668552465`,
+    description: `${post.description.substring(
+      0,
+      120
+    )}... Read 100% authentic Vedic info on Pune's no.1 pooja website. Call 8668552465.`,
+    keywords: `${post.title
+      .split(" ")
+      .join(", ")}, vedic pooja blog, astrology blog, pune pandit, 8668552465`,
+    canonical: `https://www.vedic-pooja.com/blog/${post.id}`,
+    ogImage: `https://www.vedic-pooja.com${post.image.replace("@/", "/")}`,
+    ogType: "article",
+  };
+
   return (
     <div className="min-h-screen bg-[#FFF7E6] py-20">
+      <SEOMetadata {...metaProps} />
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.article
           initial={{ opacity: 0, y: 20 }}

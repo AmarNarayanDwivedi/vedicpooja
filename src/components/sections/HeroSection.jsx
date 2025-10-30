@@ -41,22 +41,17 @@ const HeroSection = ({ onBookPoojaClick }) => {
       className="relative h-screen w-full flex items-center justify-center text-white overflow-hidden"
     >
       <AnimatePresence>
-        <motion.div
+        <motion.img
           key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
-        />
-        <img
           src={slides[currentSlide].image}
           alt="Vedic pooja services and astrology consultations in Pune"
           fetchpriority="high"
           loading="eager"
-          className="absolute inset-0 w-full h-full object-cover opacity-0"
-          aria-hidden="true"
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>
       <div className="absolute inset-0 bg-black/60"></div>

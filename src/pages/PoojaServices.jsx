@@ -1,3 +1,4 @@
+import SEOMetadata from "@/components/SEOMetadata.jsx";
 import React, { useState, useEffect, useContext, createContext } from "react";
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -668,171 +669,189 @@ const PoojaDetail = ({ setIsNavigating }) => {
     );
   }
 
+  // Add dynamic SEO metadata for pooja detail pages
+  const metaProps = {
+    title: `Book ${pooja.name} in Pune | 100% Authentic | 8668552465`,
+    description: `${pooja.englishDescription.substring(
+      0,
+      110
+    )}... Book 100% authentic ${
+      pooja.name
+    } in Pune. Pune's no.1 website for experienced Pandits. Call 8668552465.`,
+    keywords: `${pooja.name}, book pandit pune, 100% authentic pooja, vedic rituals, 8668552465`,
+    canonical: `https://www.vedic-pooja.com/pooja/${slug}`,
+    ogImage: `https://www.vedic-pooja.com${pooja.image.replace("../", "/")}`,
+    ogType: "product",
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="max-w-6xl mx-auto"
-    >
-      <Card className="bg-white/70 backdrop-blur-sm shadow-lg overflow-hidden border-accent/20">
-        <div className="md:flex">
-          <div className="md:w-1/3 h-64 md:h-auto overflow-hidden">
-            <motion.img
-              layoutId={`pooja-image-${slug}`}
-              src={pooja.image}
-              alt={`Experienced pandit performing ${pooja.name} pooja in Pune`}
-              loading="lazy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="p-6 md:p-8 flex-1">
-            <h1 className="text-4xl font-playfair text-secondary mb-4">
-              {pooja.name}
-            </h1>
-            <p className="text-gray-700 font-poppins leading-relaxed mb-6">
-              {lang === "hi"
-                ? pooja.hindiDescription
-                : pooja.englishDescription}
-            </p>
-
-            <Button
-              size="lg"
-              onClick={() => handleWhatsAppBook("Basic", pooja.pricing.basic)}
-              className="flex items-center gap-2"
-            >
-              <Phone size={20} />
-              {t("bookViaWhatsApp")}
-            </Button>
-          </div>
-        </div>
-      </Card>
-
-      {/* Packages Tabs */}
-      <Card className="mt-8 bg-white/70 backdrop-blur-sm shadow-lg border-accent/20">
-        <CardHeader>
-          <CardTitle className="text-3xl">{t("packages")}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Tabs defaultValue="basic" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-primary/10">
-              <TabsTrigger value="basic">{t("basic")}</TabsTrigger>
-              <TabsTrigger value="standard">{t("standard")}</TabsTrigger>
-              <TabsTrigger value="premium">{t("premium")}</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="basic" className="pt-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-3xl font-bold text-primary">
-                  ₹{pooja.pricing.basic.toLocaleString("en-IN")}
-                </h3>
-                <Button
-                  onClick={() =>
-                    handleWhatsAppBook("Basic", pooja.pricing.basic)
-                  }
-                  className="bg-primary hover:bg-primary/90"
-                >
-                  {t("bookNow")}
-                </Button>
-              </div>
-              <h4 className="text-lg font-semibold text-secondary mb-2">
-                {t("includes")}:
-              </h4>
-              <ul className="space-y-2">
-                {pooja.includes.basic.map((item, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <CheckCircle className="text-green-600" size={16} />
-                    <span className="font-poppins">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </TabsContent>
-
-            <TabsContent value="standard" className="pt-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-3xl font-bold text-primary">
-                  ₹{pooja.pricing.standard.toLocaleString("en-IN")}
-                </h3>
-                <Button
-                  onClick={() =>
-                    handleWhatsAppBook("Standard", pooja.pricing.standard)
-                  }
-                  className="bg-primary hover:bg-primary/90"
-                >
-                  {t("bookNow")}
-                </Button>
-              </div>
-              <h4 className="text-lg font-semibold text-secondary mb-2">
-                {t("includes")}:
-              </h4>
-              <ul className="space-y-2">
-                {pooja.includes.standard.map((item, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <CheckCircle className="text-green-600" size={16} />
-                    <span className="font-poppins">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </TabsContent>
-
-            <TabsContent value="premium" className="pt-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-3xl font-bold text-primary">
-                  ₹{pooja.pricing.premium.toLocaleString("en-IN")}
-                </h3>
-                <Button
-                  onClick={() =>
-                    handleWhatsAppBook("Premium", pooja.pricing.premium)
-                  }
-                  className="bg-primary hover:bg-primary/90"
-                >
-                  {t("bookNow")}
-                </Button>
-              </div>
-              <h4 className="text-lg font-semibold text-secondary mb-2">
-                {t("includes")}:
-              </h4>
-              <ul className="space-y-2">
-                {pooja.includes.premium.map((item, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <CheckCircle className="text-green-600" size={16} />
-                    <span className="font-poppins">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </TabsContent>
-          </Tabs>
-        </CardContent>
-      </Card>
-
-      {/* Reviews Section */}
-      <Card className="mt-8 bg-white/70 backdrop-blur-sm shadow-lg border-accent/20">
-        <CardHeader>
-          <CardTitle className="text-3xl">{t("reviews")}</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {pooja.reviews.map((review, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="border-b border-accent/20 pb-4 last:border-b-0"
-            >
-              <div className="flex justify-between items-center mb-1">
-                <span className="font-semibold text-secondary">
-                  {review.name}
-                </span>
-                <StarRating rating={review.rating} />
-              </div>
-              <p className="text-gray-700 font-poppins italic">
-                "{review.comment}"
+    <>
+      <SEOMetadata {...metaProps} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-6xl mx-auto"
+      >
+        <Card className="bg-white/70 backdrop-blur-sm shadow-lg overflow-hidden border-accent/20">
+          <div className="md:flex">
+            <div className="md:w-1/3 h-64 md:h-auto overflow-hidden">
+              <motion.img
+                layoutId={`pooja-image-${slug}`}
+                src={pooja.image}
+                alt={`Experienced pandit performing ${pooja.name} pooja in Pune`}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-6 md:p-8 flex-1">
+              <h1 className="text-4xl font-playfair text-secondary mb-4">
+                {pooja.name}
+              </h1>
+              <p className="text-gray-700 font-poppins leading-relaxed mb-6">
+                {lang === "hi"
+                  ? pooja.hindiDescription
+                  : pooja.englishDescription}
               </p>
-            </motion.div>
-          ))}
-        </CardContent>
-      </Card>
-    </motion.div>
+
+              <Button
+                size="lg"
+                onClick={() => handleWhatsAppBook("Basic", pooja.pricing.basic)}
+                className="flex items-center gap-2"
+              >
+                <Phone size={20} />
+                {t("bookViaWhatsApp")}
+              </Button>
+            </div>
+          </div>
+        </Card>
+
+        {/* Packages Tabs */}
+        <Card className="mt-8 bg-white/70 backdrop-blur-sm shadow-lg border-accent/20">
+          <CardHeader>
+            <CardTitle className="text-3xl">{t("packages")}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Tabs defaultValue="basic" className="w-full">
+              <TabsList className="grid w-full grid-cols-3 bg-primary/10">
+                <TabsTrigger value="basic">{t("basic")}</TabsTrigger>
+                <TabsTrigger value="standard">{t("standard")}</TabsTrigger>
+                <TabsTrigger value="premium">{t("premium")}</TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="basic" className="pt-4">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-3xl font-bold text-primary">
+                    ₹{pooja.pricing.basic.toLocaleString("en-IN")}
+                  </h3>
+                  <Button
+                    onClick={() =>
+                      handleWhatsAppBook("Basic", pooja.pricing.basic)
+                    }
+                    className="bg-primary hover:bg-primary/90"
+                  >
+                    {t("bookNow")}
+                  </Button>
+                </div>
+                <h4 className="text-lg font-semibold text-secondary mb-2">
+                  {t("includes")}:
+                </h4>
+                <ul className="space-y-2">
+                  {pooja.includes.basic.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <CheckCircle className="text-green-600" size={16} />
+                      <span className="font-poppins">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </TabsContent>
+
+              <TabsContent value="standard" className="pt-4">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-3xl font-bold text-primary">
+                    ₹{pooja.pricing.standard.toLocaleString("en-IN")}
+                  </h3>
+                  <Button
+                    onClick={() =>
+                      handleWhatsAppBook("Standard", pooja.pricing.standard)
+                    }
+                    className="bg-primary hover:bg-primary/90"
+                  >
+                    {t("bookNow")}
+                  </Button>
+                </div>
+                <h4 className="text-lg font-semibold text-secondary mb-2">
+                  {t("includes")}:
+                </h4>
+                <ul className="space-y-2">
+                  {pooja.includes.standard.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <CheckCircle className="text-green-600" size={16} />
+                      <span className="font-poppins">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </TabsContent>
+
+              <TabsContent value="premium" className="pt-4">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-3xl font-bold text-primary">
+                    ₹{pooja.pricing.premium.toLocaleString("en-IN")}
+                  </h3>
+                  <Button
+                    onClick={() =>
+                      handleWhatsAppBook("Premium", pooja.pricing.premium)
+                    }
+                    className="bg-primary hover:bg-primary/90"
+                  >
+                    {t("bookNow")}
+                  </Button>
+                </div>
+                <h4 className="text-lg font-semibold text-secondary mb-2">
+                  {t("includes")}:
+                </h4>
+                <ul className="space-y-2">
+                  {pooja.includes.premium.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <CheckCircle className="text-green-600" size={16} />
+                      <span className="font-poppins">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </TabsContent>
+            </Tabs>
+          </CardContent>
+        </Card>
+
+        {/* Reviews Section */}
+        <Card className="mt-8 bg-white/70 backdrop-blur-sm shadow-lg border-accent/20">
+          <CardHeader>
+            <CardTitle className="text-3xl">{t("reviews")}</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {pooja.reviews.map((review, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="border-b border-accent/20 pb-4 last:border-b-0"
+              >
+                <div className="flex justify-between items-center mb-1">
+                  <span className="font-semibold text-secondary">
+                    {review.name}
+                  </span>
+                  <StarRating rating={review.rating} />
+                </div>
+                <p className="text-gray-700 font-poppins italic">
+                  "{review.comment}"
+                </p>
+              </motion.div>
+            ))}
+          </CardContent>
+        </Card>
+      </motion.div>
+    </>
   );
 };
 
@@ -879,7 +898,18 @@ export default function PoojaServicesPage() {
           <Routes>
             <Route
               index
-              element={<PoojaList setIsNavigating={setIsNavigating} />}
+              element={
+                <>
+                  <SEOMetadata
+                    title="All Pooja Services in Pune | Book Pandit | 100% Authentic | 8668552465"
+                    description="View all 100% authentic Vedic poojas in Pune. Pune's no.1 website to book Pandits for Vastu, Dosh Nivaran, Marriage & more. Call 8668552465."
+                    keywords="all pooja services, book pandit pune, vedic rituals, 100% authentic pooja, pooja booking pune, 8668552465"
+                    canonical="https://www.vedic-pooja.com/pooja"
+                    ogImage="https://www.vedic-pooja.com/assets/Banner/service-page.webp"
+                  />
+                  <PoojaList setIsNavigating={setIsNavigating} />
+                </>
+              }
             />
             <Route
               path=":slug"
