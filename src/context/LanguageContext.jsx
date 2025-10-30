@@ -48,6 +48,19 @@ export const translations = {
     footerPoojaServices: "Pooja Services",
     footerQuickLinks: "Quick Links",
     footerContactInfo: "Contact Info",
+    // Astrology page translations
+    astrologyHeroTitle:
+      "Discover the Power of Astrology — With Expert Guidance",
+    all: "All",
+    marriage: "Marriage",
+    career: "Career",
+    health: "Health",
+    finance: "Finance",
+    spiritual: "Spiritual",
+    footerCTA: "Schedule your astrology consultation on WhatsApp right now 📱.",
+    consultationPrice: "Consultation starts at",
+    bookYourSession: "Book your session!",
+    consultNow: "Consult Now",
   },
   hi: {
     navHome: "होम",
@@ -95,6 +108,19 @@ export const translations = {
     footerPoojaServices: "पूजा सेवाएं",
     footerQuickLinks: "त्वरित लिंक",
     footerContactInfo: "संपर्क जानकारी",
+    // Astrology page translations
+    astrologyHeroTitle:
+      "ज्योतिष की शक्ति की खोज करें — विशेषज्ञ मार्गदर्शन के साथ",
+    all: "सभी",
+    marriage: "विवाह",
+    career: "करियर",
+    health: "स्वास्थ्य",
+    finance: "वित्तीय",
+    spiritual: "आध्यात्मिक",
+    footerCTA: "अभी व्हाट्सएप पर अपनी ज्योतिष सलाह शेड्यूल करें 📱।",
+    consultationPrice: "सलाह शुरू होती है",
+    bookYourSession: "अपना सत्र बुक करें!",
+    consultNow: "अभी सलाह लें",
   },
   mr: {
     navHome: "मुख्यपृष्ठ",
