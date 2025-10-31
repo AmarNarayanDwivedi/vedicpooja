@@ -9,6 +9,7 @@ import GallerySection from "@/components/sections/GallerySection.jsx";
 import BlogSection from "@/components/sections/BlogSection.jsx";
 import TestimonialsSlider from "@/components/sections/TestimonialsSlider.jsx";
 import BookingSection from "@/components/sections/BookingSection.jsx";
+import logo from "@/assets/logo.webp";
 
 /**
  * Home page component - Main landing page with all sections
@@ -27,7 +28,7 @@ export default function Home() {
         description="Book 100% authentic Vedic pooja services in Pune. Pune's no.1 website for experienced Pandits. Call 8668552465 for Griha Pravesh, Satyanarayan & more."
         keywords="pooja booking pune, pandit in pune, vedic pooja pune, 100% authentic pooja, satyanarayan pooja pune, griha pravesh pooja pune, 8668552465"
         canonical="https://www.vedic-pooja.com/"
-        ogImage="https://www.vedic-pooja.com/assets/Banner/ritualsbannerherosection.webp"
+        ogImage={`https://www.vedic-pooja.com${logo.replace("@", "")}`}
       />
 
       <script type="application/ld+json">

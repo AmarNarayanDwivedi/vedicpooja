@@ -577,7 +577,7 @@ const GallerySection = ({ lang }) => {
                 traditional Vedic rituals.
               </p>
               <Button
-                href={`https://wa.me/910000000000?text=I'm%20interested%20in%20the%20${encodeURIComponent(
+                href={`https://wa.me/8668552465?text=I'm%20interested%20in%20the%20${encodeURIComponent(
                   selectedImage.name
                 )}%20pooja.`}
                 className="mt-4"
@@ -641,7 +641,7 @@ const CtaFooterBlock = ({ lang }) => (
         {translations[lang].ctaTitle}
       </h2>
       <div className="mt-8">
-        <Button href="https://wa.me/910000000000?text=Hello%20Pandit%20Ji,%20I'm%20interested%20in%20your%20pooja%20services.">
+        <Button href="https://wa.me/8668552465?text=Hello%20Pandit%20Ji,%20I'm%20interested%20in%20your%20pooja%20services.">
           {translations[lang].ctaButton}
         </Button>
       </div>

@@ -905,7 +905,7 @@ export default function PoojaServicesPage() {
                     description="View all 100% authentic Vedic poojas in Pune. Pune's no.1 website to book Pandits for Vastu, Dosh Nivaran, Marriage & more. Call 8668552465."
                     keywords="all pooja services, book pandit pune, vedic rituals, 100% authentic pooja, pooja booking pune, 8668552465"
                     canonical="https://www.vedic-pooja.com/pooja"
-                    ogImage="https://www.vedic-pooja.com/assets/Banner/service-page.webp"
+                    ogImage="https://www.vedic-pooja.com/assets/logo-v9N9XIIJ.webp"
                   />
                   <PoojaList setIsNavigating={setIsNavigating} />
                 </>

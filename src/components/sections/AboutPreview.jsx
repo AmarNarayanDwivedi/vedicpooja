@@ -46,6 +46,7 @@ const AboutPreview = () => {
             <Link
               to="/about"
               className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-[#E67E22] to-[#F4C430] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:from-[#c66919] hover:to-[#E67E22] transition-all duration-300 transform hover:scale-105"
+              aria-label="Read more about Pandit Aditya Narayan Ji"
             >
               {t.readMore}
               <svg

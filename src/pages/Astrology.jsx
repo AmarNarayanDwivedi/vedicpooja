@@ -3,6 +3,7 @@ import { Star, ChevronDown, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "../context/LanguageContext.jsx";
 import SEOMetadata from "@/components/SEOMetadata.jsx";
+import astrologyHeroImg from "@/assets/Banner/astrologyherosection.webp";
 
 // --- Helper Functions & Data ---
 
@@ -835,7 +836,10 @@ export default function AstrologyPageView() {
         description="Get expert astrology consultation in Pune. Pune's no.1 website for Kundali matching, Vastu & predictions. 100% authentic guidance. Call 8668552465."
         keywords="astrology in pune, astrologer pune, kundali matching pune, vastu consultation pune, 100% authentic astrology, 8668552465"
         canonical="https://www.vedic-pooja.com/astrology"
-        ogImage="https://www.vedic-pooja.com/assets/Banner/astrologyherosection.webp"
+        ogImage={`https://www.vedic-pooja.com${astrologyHeroImg.replace(
+          "@",
+          ""
+        )}`}
       />
       <script type="application/ld+json">
         {JSON.stringify({

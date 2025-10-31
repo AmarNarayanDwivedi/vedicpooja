@@ -15,7 +15,8 @@ const OpenPoojaServicePage = lazy(() =>
   import("./pages/PoojaServiceDetail.jsx")
 );
 const BlogPage = lazy(() => import("./pages/Blog.jsx"));
-const BlogDetail = lazy(() => import("./pages/BlogDetail.jsx"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail.jsx")); // Keep this for old links
+const BlogSlugDetail = lazy(() => import("./pages/BlogSlugDetail.jsx")); // <-- ADD THIS
 
 export default function App() {
   const ScrollToHash = () => {
@@ -126,8 +127,12 @@ export default function App() {
                 <Route path="/astrology" element={<AstrologyPage />} />
                 <Route path="/pooja/*" element={<PoojaServicesPage />} />
                 <Route path="/pooja/open" element={<OpenPoojaServicePage />} />
+                {/* --- UPDATE BLOG ROUTES --- */}
                 <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/:id" element={<BlogDetail />} />
+                <Route path="/blog/:slug" element={<BlogSlugDetail />} />{" "}
+                {/* <-- ADD THIS */}
+                <Route path="/blog/:id" element={<BlogDetail />} />{" "}
+                {/* <-- Keep this for old homepage links */}
               </Routes>
             </Suspense>
           </main>
