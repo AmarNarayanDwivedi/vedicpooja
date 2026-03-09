@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond, Prata, Lato } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -62,6 +64,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/assets/logo.webp", type: "image/webp" },
+    ],
+    shortcut: "/assets/logo.webp",
+    apple: "/assets/logo.webp",
+  },
 };
 
 export default function RootLayout({
@@ -106,6 +115,8 @@ export default function RootLayout({
           }}
         />
         <ClientLayout>{children}</ClientLayout>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
