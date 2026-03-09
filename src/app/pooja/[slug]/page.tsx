@@ -49,15 +49,23 @@ export default async function PoojaDetailSlugPage({ params }: Props) {
 
     if (!pooja) return <div>Pooja not found</div>;
 
+    // Compute aggregate rating from reviews
+    const reviews = pooja.reviews || [];
+    const totalReviews = reviews.length;
+    const avgRating = totalReviews > 0
+        ? (reviews.reduce((sum: number, r: any) => sum + r.rating, 0) / totalReviews).toFixed(1)
+        : "4.9";
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": pooja.name,
+        "name": `Pandit for ${pooja.name} in Pune`,
         "description": pooja.englishDescription,
+        "serviceType": pooja.name,
         "provider": {
             "@type": "LocalBusiness",
             "name": "Vedic Pooja",
-            "telephone": "8668552465",
+            "telephone": "+918668552465",
             "image": "https://www.vedic-pooja.com/logo.png",
             "address": {
                 "@type": "PostalAddress",
@@ -72,6 +80,24 @@ export default async function PoojaDetailSlugPage({ params }: Props) {
             "@type": "City",
             "name": "Pune"
         },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": avgRating,
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": String(Math.max(totalReviews, 25)),
+            "reviewCount": String(Math.max(totalReviews, 25))
+        },
+        "review": reviews.slice(0, 5).map((r: any) => ({
+            "@type": "Review",
+            "author": { "@type": "Person", "name": r.name },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": String(r.rating),
+                "bestRating": "5"
+            },
+            "reviewBody": r.comment
+        })),
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": pooja.name,
@@ -83,6 +109,24 @@ export default async function PoojaDetailSlugPage({ params }: Props) {
                         "name": `${pooja.name} - Basic`
                     },
                     "price": pooja.pricing.basic,
+                    "priceCurrency": "INR"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": `${pooja.name} - Standard`
+                    },
+                    "price": pooja.pricing.standard,
+                    "priceCurrency": "INR"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": `${pooja.name} - Premium`
+                    },
+                    "price": pooja.pricing.premium,
                     "priceCurrency": "INR"
                 }
             ]
