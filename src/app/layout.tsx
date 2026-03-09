@@ -31,11 +31,11 @@ const lato = Lato({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vedic-pooja.com"),
   title: {
-    default: "Pune's No.1 Pooja Booking | 100% Authentic Vedic Pooja | 8668552465",
-    template: "%s | Vedic Pooja | 8668552465",
+    default: "8668552465 | Vedic Pooja Pandit in Pune | 100% Authentic Rituals",
+    template: "8668552465 | %s | Vedic Pooja",
   },
-  description: "Book authentic Vedic pooja services in Pune with experienced Pandits. Griha Pravesh, Satyanarayan, Marriage & more.",
-  keywords: ["pooja booking pune", "pandit in pune", "vedic pooja pune", "100% authentic pooja", "satyanarayan pooja pune", "griha pravesh pooja pune", "Hinjewadi", "Wakad", "ShivajiNagar", "VimanNagar", "Hadapsar", "online pooja india", "astrology consultation"],
+  description: "8668552465 - Book experienced Pandits for all Vedic Pujas in Pune. 100% Authentic rituals like Griha Pravesh, Vastu Shanti & Satyanarayan. Includes Samagri & Muhurat.",
+  keywords: ["pandit in pune", "pooja booking pune", "vedic pandit pune", "pandit for griha pravesh pune", "pandit for marriage pune", "pandit for vastu shanti pune", "satyanarayan pooja pandit pune", "pandit for bhoomi pujan pune", "pandit for mundan pune", "pandit for rudrabhishek pune", "north indian pandit in pune", "south indian pandit in pune", "marathi pandit in pune", "pandit near me pune", "8668552465", "9225509555", "satyanarayan pooja pune", "griha pravesh pooja pune", "Hinjewadi", "Wakad", "ShivajiNagar", "VimanNagar", "Hadapsar", "online pooja india", "astrology consultation"],
   alternates: {
     canonical: "https://www.vedic-pooja.com",
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Vedic Pooja",
     images: [
       {
-        url: "/assets/logo.webp",
+        url: "/logo.png",
         width: 800,
         height: 600,
       },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vedic Pooja | Authentic Hindu Rituals",
     description: "Authentic Vedic pooja services in Pune & All India.",
-    images: ["/assets/logo.webp"],
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -66,10 +66,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/assets/logo.webp", type: "image/webp" },
+      { url: "/logo.png", type: "image/png" },
     ],
-    shortcut: "/assets/logo.webp",
-    apple: "/assets/logo.webp",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
@@ -89,28 +89,35 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Vedic Pooja",
-              image: "https://www.vedic-pooja.com/assets/logo.webp",
+              "name": "Vedic Pooja",
+              "image": "https://www.vedic-pooja.com/logo.png",
               "@id": "https://www.vedic-pooja.com",
-              url: "https://www.vedic-pooja.com",
-              telephone: ["+918668552465", "+919225509555"],
-              address: {
+              "url": "https://www.vedic-pooja.com",
+              "telephone": ["+918668552465", "+919225509555"],
+              "address": {
                 "@type": "PostalAddress",
-                addressLocality: "Pune",
-                addressRegion: "Maharashtra",
-                addressCountry: "IN",
+                "streetAddress": "Pune City",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "postalCode": "411001",
+                "addressCountry": "IN"
               },
-              areaServed: [
-                { "@type": "City", name: "Pune" },
-                { "@type": "Place", name: "Hinjewadi" },
-                { "@type": "Place", name: "Wakad" },
-                { "@type": "Place", name: "ShivajiNagar" },
-                { "@type": "Place", name: "VimanNagar" },
-                { "@type": "Place", name: "Hadapsar" },
-                { "@type": "Country", name: "India" }
+              "areaServed": [
+                "Wakad", "Hinjewadi", "Baner", "Hadapsar", "Viman Nagar", "Kharadi", "Kothrud", "Pimple Saudagar", "Aundh", "Ravet", "Magarpatta", "Shivaji Nagar", "Deccan", "PCMC"
               ],
-              sameAs: ["https://www.instagram.com/adityanarayan3081"],
-              description: "Book 100% authentic Vedic pooja services in Pune and across India. Experienced Pandits for Griha Pravesh, Satyanarayan & more."
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Pooja Services in Pune",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pandit for Griha Pravesh" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pandit for Satyanarayan Pooja" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pandit for Marriage/Vivah" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pandit for Vastu Shanti" } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pandit for Bhoomi Pujan" } }
+                ]
+              },
+              "sameAs": ["https://www.instagram.com/adityanarayan3081"],
+              "description": "Pune's #1 Vedic Pooja Service. Book experienced Pandits for 500+ types of Pujas in all over Pune. Call 8668552465."
             })
           }}
         />

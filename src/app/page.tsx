@@ -28,11 +28,11 @@ export default function Home() {
   return (
     <>
       <SEOMetadata
-        title="Pune's No.1 Pooja Booking | 100% Authentic Vedic Pooja | 8668552465"
-        description="Book 100% authentic Vedic pooja services in Pune. Pune's no.1 website for experienced Pandits. Call 8668552465 for Griha Pravesh, Satyanarayan & more."
-        keywords="pooja booking pune, pandit in pune, vedic pooja pune, 100% authentic pooja, satyanarayan pooja pune, griha pravesh pooja pune, Hinjewadi, Wakad, ShivajiNagar, VimanNagar, Hadapsar, 8668552465, 9225509555"
+        title="8668552465 | Pune's No.1 Pooja Booking | 100% Authentic Vedic Pooja"
+        description="8668552465 - Book 100% authentic Vedic pooja services in Pune. Pune's no.1 website for experienced Pandits. Call 8668552465 for Griha Pravesh, Satyanarayan & more."
+        keywords="8668552465, pooja booking pune, pandit in pune, vedic pooja pune, 100% authentic pooja, satyanarayan pooja pune, griha pravesh pooja pune, Hinjewadi, Wakad, ShivajiNagar, VimanNagar, Hadapsar, 9225509555"
         canonical="https://www.vedic-pooja.com/"
-        ogImage={`https://www.vedic-pooja.com${logo.src ? logo.src.replace("@", "") : "/assets/logo.webp"}`}
+        ogImage="https://www.vedic-pooja.com/logo.png"
       />
 
       <script type="application/ld+json">

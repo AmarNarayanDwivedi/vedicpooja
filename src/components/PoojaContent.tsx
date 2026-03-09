@@ -686,7 +686,6 @@ const PoojaDetail = ({ setIsNavigating }: any) => {
 
   return (
     <>
-      <SEOMetadata {...metaProps} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -822,6 +821,23 @@ const PoojaDetail = ({ setIsNavigating }: any) => {
             </Tabs>
           </CardContent>
         </Card>
+
+        {/* Visible FAQ Section for Users & SEO */}
+        {pooja.faqs && (
+          <Card className="mt-8 bg-white/70 backdrop-blur-sm shadow-lg border-accent/20">
+            <CardHeader>
+              <CardTitle className="text-2xl font-playfair text-secondary">Frequently Asked Questions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {pooja.faqs.map((faq: any, index: number) => (
+                <div key={index} className="border-b border-gray-100 pb-4 last:border-0">
+                  <h4 className="font-bold text-primary mb-2">{faq.question}</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        )}
 
         {/* Reviews Section */}
         <Card className="mt-8 bg-white/70 backdrop-blur-sm shadow-lg border-accent/20">

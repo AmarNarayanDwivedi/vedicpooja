@@ -653,11 +653,11 @@ export default function AboutPage() {
 
   // ADD THIS METADATA
   const metaProps = {
-    title: "About Pune's No.1 Pandit | 100% Authentic Vedic Pooja | 8668552465",
+    title: "8668552465 | About Pune's No.1 Pandit | 100% Authentic Vedic Pooja",
     description:
-      "Learn about Pandit Aditya Narayan Ji, the expert behind Pune's no.1 pooja booking website. 12+ years of experience in 100% authentic Vedic pooja. Call 8668552465.",
+      "8668552465 - Learn about Pandit Aditya Narayan Ji, the expert behind Pune's no.1 pooja booking website. 12+ years of experience in 100% authentic Vedic pooja.",
     keywords:
-      "about pandit aditya narayan, best pandit in pune, pune's no.1 pooja booking, 100% authentic vedic pooja, 8668552465",
+      "8668552465, about pandit aditya narayan, best pandit in pune, pune's no.1 pooja booking, 100% authentic vedic pooja",
     canonical: "https://www.vedic-pooja.com/about",
     ogImage: "https://www.vedic-pooja.com/assets/frontphoto-DZc4wtyk.webp",
   };

@@ -111,11 +111,11 @@ const BlogSlugDetail = () => {
 
   // --- DYNAMIC SEO METADATA ---
   const metaProps = {
-    title: `${(post.title as any)[lang]} | Vedic Pooja Blog | 8668552465`,
-    description: `${(post.excerpt as any)[lang].substring(
+    title: `8668552465 | ${(post.title as any)[lang]} | Vedic Pooja Blog`,
+    description: `8668552465 - ${(post.excerpt as any)[lang].substring(
       0,
       110
-    )}... Read 100% authentic Vedic info on Pune's no.1 pooja website. Call 8668552465.`,
+    )}... Read 100% authentic Vedic info on Pune's no.1 pooja website.`,
     keywords: `blog, ${post.tags.join(", ")}, ${(post.title as any)[lang]
       .split(" ")
       .join(", ")}, 100% authentic vedic pooja, pune, 8668552465`,

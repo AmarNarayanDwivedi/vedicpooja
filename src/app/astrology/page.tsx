@@ -747,8 +747,8 @@ const AstrologyPage = ({ language, handleBooking }: { language: string; handleBo
                     <button
                       onClick={() => setActiveFilter(cat)}
                       className={`w-full text-left p-3 rounded-md transition-colors ${activeFilter === cat
-                          ? "bg-[#E67E22] text-white font-semibold"
-                          : "hover:bg-[#E67E22]/20"
+                        ? "bg-[#E67E22] text-white font-semibold"
+                        : "hover:bg-[#E67E22]/20"
                         }`}
                     >
                       {t[cat]}
@@ -831,9 +831,9 @@ export default function AstrologyPageView() {
   return (
     <div className="min-h-screen">
       <SEOMetadata
-        title="No.1 Astrology Consultation in Pune | 100% Authentic | 8668552465"
-        description="Get expert astrology consultation in Pune. Pune's no.1 website for Kundali matching, Vastu & predictions. 100% authentic guidance. Call 8668552465."
-        keywords="astrology in pune, astrologer pune, kundali matching pune, vastu consultation pune, 100% authentic astrology, 8668552465"
+        title="8668552465 | No.1 Astrology Consultation in Pune | 100% Authentic"
+        description="8668552465 - Get expert astrology consultation in Pune. Pune's no.1 website for Kundali matching, Vastu & predictions. 100% authentic guidance."
+        keywords="8668552465, astrology in pune, astrologer pune, kundali matching pune, vastu consultation pune, 100% authentic astrology"
         canonical="https://www.vedic-pooja.com/astrology"
         ogImage={`https://www.vedic-pooja.com${(astrologyHeroImg as any).src ? (astrologyHeroImg as any).src.replace(
           "@",

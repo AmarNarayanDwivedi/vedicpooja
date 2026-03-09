@@ -98,6 +98,20 @@ export const poojaServicesData = [
           "Pehle thoda doubt tha online booking mein, but service was excellent. Pandit ji was very knowledgeable.",
       },
     ],
+    faqs: [
+      {
+        question: "What is the best time/muhurat for Griha Pravesh?",
+        answer: "Griha Pravesh should be done on auspicious tithis like Dwitiya, Tritiya, Panchami, Saptami, Dashami, Ekadashi, or Dwadashi of Shukla Paksha. Consult our Pandit for a personalized muhurat based on your horoscope.",
+      },
+      {
+        question: "Is puja samagri included in the package?",
+        answer: "Yes, all our Griha Pravesh packages (Basic, Standard, Premium) include the necessary puja samagri. The premium package even includes elaborate decoration.",
+      },
+      {
+        question: "Can I book a Pandit for Griha Pravesh in Wakad or Hinjewadi?",
+        answer: "Yes, we provide experienced Pandits for Griha Pravesh across all areas of Pune, including Wakad, Hinjewadi, Baner, and Hadapsar.",
+      },
+    ],
   },
   {
     id: 2,
@@ -414,13 +428,23 @@ export const poojaServicesData = [
         name: "Neha Gupta",
         rating: 4.5,
         comment:
-          "Online booking kiya tha first time. Experience was seamless. Pandit ji was knowledgeable and on time.",
+          "Online booking kiya taj first time. Experience was seamless. Pandit ji was knowledgeable and on time.",
       },
       {
         name: "Vikram Singh",
         rating: 4,
         comment:
           "Har Purnima pe karwate hain. Aapki service se bahut easy ho gaya hai. Samagri bhi quality ki thi.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is Satyanarayan Puja performed?",
+        answer: "Satyanarayan Puja is performed to seek blessings from Lord Vishnu for success, health, and prosperity. It is commonly done after significant life events like marriage, housewarming, or career achievements.",
+      },
+      {
+        question: "When is the best day for Satyanarayan Puja?",
+        answer: "Purnima (Full Moon) and Ekadashi are considered the most auspicious days for Satyanarayan Puja, though it can be performed on any day with a good muhurat.",
       },
     ],
   },
@@ -488,6 +512,16 @@ export const poojaServicesData = [
         rating: 4,
         comment:
           "I was worried about the rituals, but the pandits were so experienced. Sab kuch smooth ho gaya. Bahut shukriya.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you provide Pandits for both North and South Indian weddings?",
+        answer: "Yes, we have a diverse team of experienced Pandits proficient in various regional Vedic traditions, including North Indian and South Indian styles.",
+      },
+      {
+        question: "How far in advance should I book for a wedding pooja in Pune?",
+        answer: "Wedding dates are highly sought after. We recommend booking at least 1-2 months in advance to secure the best Pandit for your preferred muhurat.",
       },
     ],
   },
@@ -804,6 +838,16 @@ export const poojaServicesData = [
         name: "Pallavi",
         rating: 5,
         comment: "Sapne ke ghar ki shuruat shubh hui. Dhanyawaad.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is Bhoomi Pujan?",
+        answer: "Bhoomi Pujan is a sacred ritual performed before starting construction on a piece of land to seek permission and blessings from Mother Earth (Bhoomi Devi) and Vastu Purush.",
+      },
+      {
+        question: "Is Bhoomi Pujan different from Vastu Shanti?",
+        answer: "Yes, Bhoomi Pujan is done *before* construction begins, while Vastu Shanti is typically done *after* the construction is complete and before moving in (often along with Griha Pravesh).",
       },
     ],
   },

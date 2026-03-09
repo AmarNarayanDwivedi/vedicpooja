@@ -141,11 +141,11 @@ export default function Blog() {
 
   // Fix the hardcoded ogImage path
   const metaProps = {
-    title: "Vedic Pooja & Astrology Blog | Pune's No.1 Pandit | 8668552465",
+    title: "8668552465 | Vedic Pooja & Astrology Blog | Pune's No.1 Pandit",
     description:
-      "Read articles on Vastu, Doshas, and 100% authentic Vedic pooja rituals from Pune's no.1 pooja booking website. Learn more & call 8668552465.",
+      "8668552465 - Read articles on Vastu, Doshas, and 100% authentic Vedic pooja rituals from Pune's no.1 pooja booking website.",
     keywords:
-      "vedic pooja blog, astrology blog, vastu tips, dosh nivaran blog, pune pandit blog, 8668552465",
+      "8668552465, vedic pooja blog, astrology blog, vastu tips, dosh nivaran blog, pune pandit blog",
     canonical: "https://www.vedic-pooja.com/blog",
     ogImage: `https://www.vedic-pooja.com${(dailyRemediesImg as any)?.src || dailyRemediesImg}`, // Use the variable
   };
