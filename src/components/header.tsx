@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "@/context/LanguageContext";
 import logo from "@/assets/logo.webp";
+import Image from "next/image";
 
 const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -76,11 +77,13 @@ export default function Header() {
           className="flex items-center gap-2 -ml-2"
           onClick={closeMenu}
         >
-          <img
-            src={logo.src}
-            alt="Vedic Pooja Logo - Authentic Hindu rituals and astrology services in Pune"
-            loading="lazy"
-            className="h-8 w-8"
+          <Image
+            src="/logo.png"
+            alt="Vedic Pooja Logo"
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10 object-contain"
           />
           <div
             className="text-2xl font-bold text-[#800000]"
@@ -235,11 +238,12 @@ export default function Header() {
           onClick={closeMenu}
         >
           <div className="absolute top-4 left-4 flex items-center gap-2">
-            <img
-              src={logo.src}
-              alt="Vedic Pooja Services - Authentic Hindu rituals and astrology in Pune, India"
-              loading="lazy"
-              className="h-8 w-8"
+            <Image
+              src="/logo.png"
+              alt="Vedic Pooja Logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
             />
             <div
               className="text-2xl font-bold text-white"

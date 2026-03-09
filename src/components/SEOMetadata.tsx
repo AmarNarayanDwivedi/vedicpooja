@@ -17,7 +17,7 @@ const SEOMetadata = ({
 }: SEOMetadataProps) => {
   const siteName = "Vedic Pooja";
   const siteUrl = "https://www.vedic-pooja.com";
-  const defaultImage = `${siteUrl}/logo.png`;
+  const defaultImage = `${siteUrl}/assets/logo.webp`;
 
   // Ensure phone number is always visible in the title as requested by the user
   const displayTitle = title.includes("8668552465") ? title : `${title} | 8668552465`;
