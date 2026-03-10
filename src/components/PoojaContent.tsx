@@ -297,7 +297,7 @@ const ServicesHeroSection = ({
       {/* Hero Banner Section */}
       <section
         className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${serviceBannerImg})` }}
+        style={{ backgroundImage: `url(${(serviceBannerImg as any)?.src || serviceBannerImg})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
         <div className="relative z-10 flex items-center justify-center h-full">
@@ -479,7 +479,7 @@ const PoojaCard = ({ pooja, setIsNavigating }: any) => {
           <div className="overflow-hidden rounded-t-lg">
             <motion.img
               layoutId={`pooja-image-${slug}`}
-              src={pooja.image}
+              src={(pooja.image as any)?.src || pooja.image}
               alt={`Experienced pandit performing ${pooja.name} pooja in Pune`}
               loading="lazy"
               className="w-full h-40 object-cover"

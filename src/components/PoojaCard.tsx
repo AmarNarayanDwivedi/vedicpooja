@@ -29,7 +29,7 @@ const PoojaCard = ({ pooja, className = "", onBookClick }: any) => {
         {/* Image Section */}
         <div className="relative overflow-hidden h-32 sm:h-36 md:h-40 rounded-t-lg">
           <Image
-            src={pooja.image}
+            src={(pooja.image as any)?.src || pooja.image}
             alt={`Traditional Hindu pooja service: ${pooja.name} performed by experienced pandit in Pune, India`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
