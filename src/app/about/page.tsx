@@ -487,19 +487,19 @@ const GallerySection = ({ lang }: any) => {
 
   const images = [
     {
-      src: "https://placehold.co/600x400/800000/FFF7E6?text=Griha+Pravesh",
+      src: "/assets/HeroPage/pooja_glimpshiss/pooja-setup.webp",
       name: "Griha Pravesh",
     },
     {
-      src: "https://placehold.co/400x500/E67E22/FFF7E6?text=Wedding+Ritual",
+      src: "/assets/HeroPage/pooja_glimpshiss/shadi.webp",
       name: "Wedding Ritual",
     },
     {
-      src: "https://placehold.co/600x500/F4C430/1a090d?text=Satyanarayan+Pooja",
+      src: "/assets/HeroPage/pooja_glimpshiss/pooja-performing.webp",
       name: "Satyanarayan Pooja",
     },
     {
-      src: "https://placehold.co/400x400/800000/FFF7E6?text=Havan",
+      src: "/assets/HeroPage/pooja_glimpshiss/pooja-performing-2.webp",
       name: "Havan Ceremony",
     },
   ];
