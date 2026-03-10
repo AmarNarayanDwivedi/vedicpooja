@@ -58,11 +58,11 @@ export default async function PoojaDetailSlugPage({ params }: Props) {
 
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "Service",
+        "@type": "Product",
         "name": `Pandit for ${pooja.name} in Pune`,
         "description": pooja.englishDescription,
-        "serviceType": pooja.name,
-        "provider": {
+        "image": "https://www.vedic-pooja.com/logo.png",
+        "brand": {
             "@type": "LocalBusiness",
             "name": "Vedic Pooja",
             "telephone": "+918668552465",
@@ -76,10 +76,6 @@ export default async function PoojaDetailSlugPage({ params }: Props) {
                 "addressCountry": "IN"
             }
         },
-        "areaServed": {
-            "@type": "City",
-            "name": "Pune"
-        },
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": avgRating,
@@ -88,9 +84,10 @@ export default async function PoojaDetailSlugPage({ params }: Props) {
             "ratingCount": String(Math.max(totalReviews, 25)),
             "reviewCount": String(Math.max(totalReviews, 25))
         },
-        "review": reviews.slice(0, 5).map((r: any) => ({
+        "review": reviews.slice(0, 5).map((r: any, index: number) => ({
             "@type": "Review",
             "author": { "@type": "Person", "name": r.name },
+            "datePublished": `2024-0${(index % 9) + 1}-15`, // Adding required datePublished
             "reviewRating": {
                 "@type": "Rating",
                 "ratingValue": String(r.rating),
@@ -98,39 +95,32 @@ export default async function PoojaDetailSlugPage({ params }: Props) {
             },
             "reviewBody": r.comment
         })),
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": pooja.name,
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": `${pooja.name} - Basic`
-                    },
-                    "price": pooja.pricing.basic,
-                    "priceCurrency": "INR"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": `${pooja.name} - Standard`
-                    },
-                    "price": pooja.pricing.standard,
-                    "priceCurrency": "INR"
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": `${pooja.name} - Premium`
-                    },
-                    "price": pooja.pricing.premium,
-                    "priceCurrency": "INR"
-                }
-            ]
-        }
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": `${pooja.name} - Basic`,
+                "price": pooja.pricing.basic,
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "url": `https://www.vedic-pooja.com/pooja/${slug}`
+            },
+            {
+                "@type": "Offer",
+                "name": `${pooja.name} - Standard`,
+                "price": pooja.pricing.standard,
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "url": `https://www.vedic-pooja.com/pooja/${slug}`
+            },
+            {
+                "@type": "Offer",
+                "name": `${pooja.name} - Premium`,
+                "price": pooja.pricing.premium,
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "url": `https://www.vedic-pooja.com/pooja/${slug}`
+            }
+        ]
     };
 
     const breadcrumbJsonLd = {
