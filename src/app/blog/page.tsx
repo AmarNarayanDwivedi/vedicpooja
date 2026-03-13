@@ -62,7 +62,7 @@ const BlogList = ({ posts, onTagSelect, activeTag, lang }: any) => {
             className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
           >
             <img
-              src={post.image}
+              src={(post.image as any)?.src || post.image}
               alt={`${post.title[lang]} - Vedic astrology and pooja guidance in Pune`}
               loading="lazy"
               className="w-full h-48 object-cover"
