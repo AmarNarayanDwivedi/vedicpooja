@@ -141,13 +141,13 @@ export default function Blog() {
 
   // Fix the hardcoded ogImage path
   const metaProps = {
-    title: "8668552465 | Vedic Pooja & Astrology Blog | Pune's No.1 Pandit",
+    title: "Vedic Pooja Blog | Expert Tips on Puja, Vastu & Astrology | Pune's No.1 Pandit",
     description:
-      "8668552465 - Read articles on Vastu, Doshas, and 100% authentic Vedic pooja rituals from Pune's no.1 pooja booking website.",
+      "Read expert guides on Griha Pravesh, Kaal Sarp Dosh, Vastu remedies, auspicious muhurats & more — by Pandit Aditya Narayan Ji, Pune's most trusted Vedic pandit. ☎️ 8668552465",
     keywords:
-      "8668552465, vedic pooja blog, astrology blog, vastu tips, dosh nivaran blog, pune pandit blog",
+      "vedic pooja blog, astrology blog pune, vastu tips pune, dosh nivaran guide, griha pravesh tips, kaal sarp dosh remedies, pandit aditya narayan ji, pune pandit blog, 8668552465",
     canonical: "https://www.vedic-pooja.com/blog",
-    ogImage: `https://www.vedic-pooja.com${(dailyRemediesImg as any)?.src || dailyRemediesImg}`, // Use the variable
+    ogImage: `https://www.vedic-pooja.com${(dailyRemediesImg as any)?.src || dailyRemediesImg}`,
   };
 
   return (
@@ -161,6 +161,34 @@ export default function Blog() {
               .font-poppins { font-family: 'Poppins', sans-serif; }
             `}</style>
       <SEOMetadata {...metaProps} />
+      {/* Blog ItemList Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Vedic Pooja & Astrology Blog — Pune's No.1 Knowledge Hub",
+          "description": "Read articles on Vastu, Doshas, and 100% authentic Vedic pooja rituals from Pune's no.1 pooja booking website.",
+          "url": "https://www.vedic-pooja.com/blog",
+          "numberOfItems": allPosts.length,
+          "itemListElement": allPosts.map((post: any, idx: number) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "name": post.title["en"],
+            "url": `https://www.vedic-pooja.com/blog/${post.slug}`,
+          })),
+        })
+      }} />
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vedic-pooja.com" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.vedic-pooja.com/blog" },
+          ],
+        })
+      }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <LanguageSwitcher currentLang={language} setLang={setLanguage} />
         <BlogList

@@ -653,11 +653,11 @@ export default function AboutPage() {
 
   // ADD THIS METADATA
   const metaProps = {
-    title: "8668552465 | About Pune's No.1 Pandit | 100% Authentic Vedic Pooja",
+    title: "Pandit Aditya Narayan Ji — Pune's Trusted Vedic Pandit & Astrologer | 12+ Years",
     description:
-      "8668552465 - Learn about Pandit Aditya Narayan Ji, the expert behind Pune's no.1 pooja booking website. 12+ years of experience in 100% authentic Vedic pooja.",
+      "Meet Pandit Aditya Narayan Ji — Pune's most trusted Vedic pandit with 12+ years of experience. Expert in Griha Pravesh, Kundali, Vastu & 27+ poojas. Call ☎️ 8668552465 for consultation.",
     keywords:
-      "8668552465, about pandit aditya narayan, best pandit in pune, pune's no.1 pooja booking, 100% authentic vedic pooja",
+      "pandit aditya narayan ji, vedic pandit pune, best pandit pune, astrologer pune, pundit pune, experienced pandit pune, 8668552465, vedic pooja pune, vastu shastra pune, kundali pandit pune",
     canonical: "https://www.vedic-pooja.com/about",
     ogImage: "https://www.vedic-pooja.com/assets/frontphoto-DZc4wtyk.webp",
   };
@@ -736,6 +736,71 @@ export default function AboutPage() {
   return (
     <>
       <SEOMetadata {...metaProps} />
+      {/* Person Schema — triggers Google Knowledge Panel */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Pandit Aditya Narayan Ji",
+            "alternateName": ["Aditya Narayan Pandit", "Pandit Aditya Ji", "Panditji Pune"],
+            "jobTitle": "Vedic Pandit, Astrologer & Religious Consultant",
+            "description": "Pandit Aditya Narayan Ji is Pune's leading Vedic Pandit with 12+ years of experience in 100% authentic Hindu rituals, astrology, and Vastu consultation.",
+            "url": "https://www.vedic-pooja.com/about",
+            "image": "https://www.vedic-pooja.com/assets/HeroPage/pooja_glimpshiss/frontphoto.webp",
+            "telephone": "+918668552465",
+            "email": "vedicpooja.aditya@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Pune",
+              "addressRegion": "Maharashtra",
+              "postalCode": "411001",
+              "addressCountry": "IN",
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 18.5204,
+              "longitude": 73.8567,
+            },
+            "worksFor": {
+              "@type": "LocalBusiness",
+              "name": "Vedic Pooja",
+              "url": "https://www.vedic-pooja.com",
+              "telephone": "+918668552465",
+            },
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Hindu Priest",
+              "occupationLocation": { "@type": "City", "name": "Pune" },
+            },
+            "knowsAbout": [
+              "Vedic Rituals", "Hindu Astrology", "Vastu Shastra",
+              "Griha Pravesh Puja", "Kaal Sarp Dosh", "Navagraha Shanti",
+              "Marriage Rituals", "Satyanarayan Puja", "Rudrabhishek",
+              "Kundali Analysis", "Muhurat Calculation",
+            ],
+            "knowsLanguage": ["Hindi", "Marathi", "English", "Sanskrit"],
+            "alumniOf": { "@type": "Organization", "name": "Vedic Shastra Gurukul" },
+            "sameAs": ["https://www.instagram.com/adityanarayan3081"],
+            "numberOfEmployees": { "@type": "QuantitativeValue", "value": 10 },
+          }),
+        }}
+      />
+      {/* BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vedic-pooja.com" },
+              { "@type": "ListItem", "position": 2, "name": "About Pandit Aditya Narayan Ji", "item": "https://www.vedic-pooja.com/about" },
+            ],
+          }),
+        }}
+      />
       <style>{globalStyles}</style>
       <div className="relative">
         <AnimatedBackground />

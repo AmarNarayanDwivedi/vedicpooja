@@ -31,24 +31,61 @@ const lato = Lato({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vedic-pooja.com"),
   title: {
-    default: "8668552465 | Vedic Pooja Pandit in Pune | 100% Authentic Rituals",
-    template: "8668552465 | %s | Vedic Pooja",
+    default: "Pune's No.1 Pooja Booking | 100% Authentic Vedic Pooja | 8668552465",
+    template: "%s | Vedic Pooja | 8668552465",
   },
-  description: "8668552465 - Book experienced Pandits for all Vedic Pujas in Pune. 100% Authentic rituals like Griha Pravesh, Vastu Shanti & Satyanarayan. Includes Samagri & Muhurat.",
-  keywords: ["pandit in pune", "pooja booking pune", "vedic pandit pune", "pandit for griha pravesh pune", "pandit for marriage pune", "pandit for vastu shanti pune", "satyanarayan pooja pandit pune", "pandit for bhoomi pujan pune", "pandit for mundan pune", "pandit for rudrabhishek pune", "north indian pandit in pune", "south indian pandit in pune", "marathi pandit in pune", "pandit near me pune", "8668552465", "9225509555", "satyanarayan pooja pune", "griha pravesh pooja pune", "Hinjewadi", "Wakad", "ShivajiNagar", "VimanNagar", "Hadapsar", "online pooja india", "astrology consultation"],
+  description: "☎️ 8668552465 · Pune's No.1 pandit booking for 27+ Vedic poojas. Samagri included. Muhurat fixed. Serving Wakad, Hinjewadi, Baner, Kothrud & all Pune. ₹2100 onwards. Book now.",
+  keywords: [
+    // Primary service keywords
+    "pandit in pune", "pooja booking pune", "vedic pandit pune",
+    "pandit for griha pravesh pune", "pandit for marriage pune",
+    "pandit for vastu shanti pune", "satyanarayan pooja pandit pune",
+    "pandit for bhoomi pujan pune", "pandit for mundan pune",
+    "pandit for rudrabhishek pune", "north indian pandit in pune",
+    "south indian pandit in pune", "marathi pandit in pune",
+    "pandit near me pune", "online pooja india", "astrology consultation pune",
+    // Phone numbers
+    "8668552465", "9225509555",
+    // Pooja types
+    "satyanarayan pooja pune", "griha pravesh pooja pune",
+    "kaal sarp dosh puja pune", "navagraha shanti pune",
+    "rudrabhishek pune", "mahamrityunjaya jaap pune",
+    "ganesh puja pune", "lakshmi puja pune", "durga puja pune",
+    "mangal dosh puja pune", "vastu dosh nivaran pune",
+    // Native Script Multilingual Keywords
+    "पंडित पुणे", "पूजा बुकिंग पुणे", "गृह प्रवेश पूजा",
+    "পুण्यात पंडित", "पूजा बुकिंग पुणे",
+    "જ્યોતિષ પૂના", "પૂજા બુકિંગ પુણે",
+    "ಪುಣೆಯಲ್ಲಿ ಪಂಡಿತ", " ಪೂಜೆ ಬುಕಿಂಗ್ ಪುಣೆ",
+    // Area-specific
+    "pandit wakad", "pandit hinjewadi", "pandit baner",
+    "pandit hadapsar", "pandit kothrud", "pandit viman nagar",
+    "pandit pimple saudagar", "pandit koregaon park",
+    "pandit kharadi", "pandit aundh", "pandit pashan",
+    "pandit pcmc", "pandit pimpri chinchwad",
+  ],
   alternates: {
     canonical: "https://www.vedic-pooja.com",
+    languages: {
+      "en-IN": "https://www.vedic-pooja.com",
+      "hi-IN": "https://www.vedic-pooja.com",
+      "mr-IN": "https://www.vedic-pooja.com",
+      "gu-IN": "https://www.vedic-pooja.com",
+      "kn-IN": "https://www.vedic-pooja.com",
+      "x-default": "https://www.vedic-pooja.com",
+    },
   },
   openGraph: {
-    title: "Vedic Pooja | Authentic Hindu Rituals",
-    description: "Book 100% authentic Vedic pooja services across Pune and India.",
+    title: "8668552465 | Vedic Pooja | Pune's No.1 Authentic Hindu Rituals",
+    description: "Book 100% authentic Vedic pooja services across Pune and India. Call 8668552465 for Griha Pravesh, Satyanarayan, Marriage & more.",
     url: "https://www.vedic-pooja.com",
     siteName: "Vedic Pooja",
     images: [
       {
         url: "/logo.png",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
+        alt: "Vedic Pooja — Pune's No.1 Pandit Booking Service",
       },
     ],
     locale: "en_IN",
@@ -56,13 +93,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vedic Pooja | Authentic Hindu Rituals",
-    description: "Authentic Vedic pooja services in Pune & All India.",
+    site: "@vedicpooja",
+    creator: "@vedicpooja",
+    title: "8668552465 | Vedic Pooja | Pune's No.1 Authentic Hindu Rituals",
+    description: "Authentic Vedic pooja services in Pune & All India. Call 8668552465.",
     images: ["/logo.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: [
@@ -70,6 +116,17 @@ export const metadata: Metadata = {
     ],
     shortcut: "/logo.png",
     apple: "/logo.png",
+  },
+  other: {
+    "geo.region": "IN-MH",
+    "geo.placename": "Pune, Maharashtra, India",
+    "geo.position": "18.5204;73.8567",
+    "ICBM": "18.5204, 73.8567",
+    "theme-color": "#E67E22",
+    "msvalidate.01": "BING_VERIFICATION_CODE_HERE",
+    "rating": "general",
+    "copyright": "Vedic Pooja",
+    "revisit-after": "3 days",
   },
 };
 
@@ -141,7 +198,8 @@ export default function RootLayout({
                 ]
               },
               "sameAs": ["https://www.instagram.com/adityanarayan3081"],
-              "description": "Pune's #1 Vedic Pooja Service. Book experienced Pandits for 500+ types of Pujas across Pune. ⭐ 4.9 rated. Call 8668552465."
+              "description": "Pune's #1 Vedic Pooja Service. Book experienced Pandits for 500+ types of Pujas across Pune. ⭐ 4.9 rated. Call 8668552465.",
+              "inLanguage": ["en-IN", "hi-IN", "mr-IN", "gu-IN", "kn-IN"]
             })
           }}
         />
@@ -163,7 +221,8 @@ export default function RootLayout({
                   "urlTemplate": "https://www.vedic-pooja.com/pooja?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
-              }
+              },
+              "inLanguage": ["en-IN", "hi-IN", "mr-IN", "gu-IN", "kn-IN"]
             })
           }}
         />
@@ -195,7 +254,8 @@ export default function RootLayout({
                 { "@type": "WebPage", "name": "Pandit for Akhand Ramayan Path", "url": "https://www.vedic-pooja.com/pooja/akhand-ramayan-path" },
                 { "@type": "WebPage", "name": "Online Havan & Pooja Services", "url": "https://www.vedic-pooja.com/pooja" },
                 { "@type": "WebPage", "name": "Astrology Consultation", "url": "https://www.vedic-pooja.com/astrology" }
-              ]
+              ],
+              "inLanguage": ["en-IN", "hi-IN", "mr-IN", "gu-IN", "kn-IN"]
             })
           }}
         />
@@ -231,7 +291,8 @@ export default function RootLayout({
                 { "@type": "ListItem", "position": 18, "name": "Pandit for Sunderkand Path", "url": "https://www.vedic-pooja.com/pooja/sunderkand-path" },
                 { "@type": "ListItem", "position": 19, "name": "Pandit for Akhand Ramayan Path", "url": "https://www.vedic-pooja.com/pooja/akhand-ramayan-path" },
                 { "@type": "ListItem", "position": 20, "name": "Online Havan & Pooja", "url": "https://www.vedic-pooja.com/pooja" }
-              ]
+              ],
+              "inLanguage": ["en-IN", "hi-IN", "mr-IN", "gu-IN", "kn-IN"]
             })
           }}
         />

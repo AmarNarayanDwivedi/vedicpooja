@@ -110,18 +110,82 @@ const BlogSlugDetail = () => {
   }
 
   // --- DYNAMIC SEO METADATA ---
+  const imageUrl = `https://www.vedic-pooja.com${(post.image as any)?.src || post.image}`;
+  const postUrl = `https://www.vedic-pooja.com/blog/${post.slug}`;
+  const publishedDate = "2025-10-30T00:00:00+05:30";
   const metaProps = {
-    title: `8668552465 | ${(post.title as any)[lang]} | Vedic Pooja Blog`,
-    description: `8668552465 - ${(post.excerpt as any)[lang].substring(
-      0,
-      110
-    )}... Read 100% authentic Vedic info on Pune's no.1 pooja website.`,
-    keywords: `blog, ${post.tags.join(", ")}, ${(post.title as any)[lang]
-      .split(" ")
-      .join(", ")}, 100% authentic vedic pooja, pune, 8668552465`,
-    canonical: `https://www.vedic-pooja.com/blog/${post.slug}`,
-    ogImage: `https://www.vedic-pooja.com${(post.image as any)?.src || post.image}`,
+    title: `${(post.title as any)[lang]} | Expert Guide by Pandit Aditya Ji | Vedic Pooja Pune`,
+    description: `${(post.excerpt as any)[lang].substring(0, 100)}. Expert advice from Pune's No.1 Vedic Pandit — Pandit Aditya Narayan Ji. Book pooja online ☎️ 8668552465 | vedic-pooja.com`,
+    keywords: `${post.tags.join(", ")}, ${(post.title as any)[lang].split(" ").join(", ")}, pandit pune, vedic pooja pune, pandit aditya narayan ji, 8668552465, vedic rituals pune`,
+    canonical: postUrl,
+    ogImage: imageUrl,
     ogType: "article",
+    articlePublishedTime: publishedDate,
+    articleModifiedTime: publishedDate,
+    authorName: "Pandit Aditya Narayan Ji",
+  };
+
+  // BlogPosting JSON-LD schema
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": (post.title as any)["en"],
+    "description": (post.excerpt as any)["en"],
+    "image": {
+      "@type": "ImageObject",
+      "url": imageUrl,
+      "width": 1200,
+      "height": 630,
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Pandit Aditya Narayan Ji",
+      "url": "https://www.vedic-pooja.com/about",
+      "jobTitle": "Vedic Pandit & Astrologer",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Vedic Pooja",
+      "url": "https://www.vedic-pooja.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.vedic-pooja.com/logo.png",
+        "width": 200,
+        "height": 200,
+      },
+    },
+    "datePublished": publishedDate,
+    "dateModified": publishedDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    "url": postUrl,
+    "inLanguage": ["en-IN", "hi-IN", "mr-IN", "gu-IN", "kn-IN"],
+    "about": {
+      "@type": "Thing",
+      "name": "Vedic Rituals & Astrology",
+    },
+    "mentions": {
+      "@type": "LocalBusiness",
+      "name": "Vedic Pooja",
+      "telephone": "+918668552465",
+      "url": "https://www.vedic-pooja.com",
+    },
+    "keywords": post.tags.join(", ") + ", vedic pooja pune, pandit pune, 8668552465",
+    "articleSection": "Vedic Rituals & Astrology",
+    "wordCount": (post.content as any)["en"]?.split(" ").length || 500,
+  };
+
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vedic-pooja.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.vedic-pooja.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": (post.title as any)["en"], "item": postUrl },
+    ],
   };
 
   const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
@@ -146,6 +210,9 @@ const BlogSlugDetail = () => {
           .font-playfair { font-family: 'Playfair Display', serif; }
           .font-poppins { font-family: 'Poppins', sans-serif; }
         `}</style>
+      {/* JSON-LD Schemas */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <SEOMetadata {...metaProps} />
         <Link

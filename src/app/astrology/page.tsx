@@ -831,64 +831,65 @@ export default function AstrologyPageView() {
   return (
     <div className="min-h-screen">
       <SEOMetadata
-        title="8668552465 | No.1 Astrology Consultation in Pune | 100% Authentic"
-        description="8668552465 - Get expert astrology consultation in Pune. Pune's no.1 website for Kundali matching, Vastu & predictions. 100% authentic guidance."
-        keywords="8668552465, astrology in pune, astrologer pune, kundali matching pune, vastu consultation pune, 100% authentic astrology"
+        title="Astrologer in Pune ☎️8668552465 | Kundali, Vastu, Mangal Dosh | Instant Consultation"
+        description="☎️ 8668552465 — Talk to Pune's best Vedic astrologer. Get accurate Kundali reading, marriage compatibility, Vastu consultation, Mangal Dosh & Kaal Sarp remedies. Online & in-person. Starting ₹201."
+        keywords="8668552465, astrology in pune, astrologer pune, kundali matching pune, vastu consultation pune, jyotish pandit pune, kundali reading pune, online astrology consultation india, best astrologer pune, 100% authentic astrology, rahu ketu dosh, mangal dosh, shani sade sati, pitra dosh, kaal sarp dosh, gemstone suggestion pune, palmistry pune, numerology pune, career astrology pune, marriage astrology pune, ज्योतिष पुणे, ज्योतिषी पुणे, कुंडली मिलान पुणे, वास्तु परामर्श पुणे, ज्योतिष सल्लागार पुणे"
         canonical="https://www.vedic-pooja.com/astrology"
         ogImage={`https://www.vedic-pooja.com${(astrologyHeroImg as any).src ? (astrologyHeroImg as any).src.replace(
           "@",
           ""
         ) : "/assets/Banner/astrologyherosection.webp"}`}
       />
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Astrology Services in Pune",
-          description:
-            "Professional astrology consultations, Kundali matching, Vastu consultation, and gemstone recommendations in Pune and online across India",
-          provider: {
-            "@type": "Organization",
-            name: "Vedic Pooja",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Pune",
-              addressRegion: "Maharashtra",
-              addressCountry: "IN",
-            },
-          },
-          serviceType: "Astrology Consultation",
-          areaServed: [
-            {
-              "@type": "Place",
-              name: "Pune",
-            },
-            {
-              "@type": "Place",
-              name: "India",
-            },
-          ],
-          offers: [
-            {
-              "@type": "Offer",
-              name: "Kundali Matching",
-              description: "Detailed compatibility analysis for marriage",
-            },
-            {
-              "@type": "Offer",
-              name: "Vastu Consultation",
-              description:
-                "Harmonize your home or office with Vedic principles",
-            },
-            {
-              "@type": "Offer",
-              name: "Gemstone Recommendation",
-              description:
-                "Personalized gemstone suggestions based on birth chart",
-            },
-          ],
-        })}
-      </script>
+      {/* Service ItemList Schema for Astrology */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Astrology Services in Pune — Vedic Pooja",
+            "description": "Expert astrology consultations in Pune for Kundali matching, Vastu, Palmistry, Numerology, and more.",
+            "url": "https://www.vedic-pooja.com/astrology",
+            "numberOfItems": 20,
+            "itemListElement": astrologyServices.map((service, idx) => ({
+              "@type": "ListItem",
+              "position": idx + 1,
+              "item": {
+                "@type": "Service",
+                "name": service.en.name,
+                "description": service.en.description,
+                "provider": {
+                  "@type": "LocalBusiness",
+                  "name": "Vedic Pooja",
+                  "telephone": "+918668552465",
+                  "url": "https://www.vedic-pooja.com",
+                },
+                "areaServed": { "@type": "City", "name": "Pune" },
+                "offers": {
+                  "@type": "Offer",
+                  "price": "201",
+                  "priceCurrency": "INR",
+                  "availability": "https://schema.org/InStock",
+                },
+              },
+            })),
+          }),
+        }}
+      />
+      {/* BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.vedic-pooja.com" },
+              { "@type": "ListItem", "position": 2, "name": "Astrology Consultation Pune", "item": "https://www.vedic-pooja.com/astrology" },
+            ],
+          }),
+        }}
+      />
       <main className="container mx-auto px-6 py-12">
         <AstrologyPage language={lang} handleBooking={handleBooking} />
       </main>
